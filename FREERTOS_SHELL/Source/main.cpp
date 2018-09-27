@@ -317,7 +317,7 @@ int main (void)
 
 ISR(PORTA_INT0_vect)
 {
-  // md_x->min_bound_interrupt_handler();
+  md_x->min_bound_interrupt_handler();
   if (coordinate_mode.ISR_get() && md_x->get_direction() == 1)
   {
     reset.ISR_put(true);
@@ -326,7 +326,7 @@ ISR(PORTA_INT0_vect)
 
 ISR(PORTA_INT1_vect)
 {
-  // md_x->max_bound_interrupt_handler();
+  md_x->max_bound_interrupt_handler();
   if (coordinate_mode.ISR_get() && md_x->get_direction() == 0)
   {
     reset.ISR_put(true);
@@ -335,7 +335,7 @@ ISR(PORTA_INT1_vect)
 
 ISR(PORTE_INT0_vect)
 {
-  // md_y->min_bound_interrupt_handler();
+  md_y->min_bound_interrupt_handler();
   if (coordinate_mode.ISR_get() && md_y->get_direction() == 1)
   {
     reset.ISR_put(true);
@@ -344,7 +344,7 @@ ISR(PORTE_INT0_vect)
 
 ISR(PORTE_INT1_vect)
 {
-  // md_y->max_bound_interrupt_handler();
+  md_y->max_bound_interrupt_handler();
   if (coordinate_mode.ISR_get() && md_y->get_direction() == 0)
   {
     reset.ISR_put(true);
@@ -353,7 +353,7 @@ ISR(PORTE_INT1_vect)
 
 ISR(PORTF_INT0_vect)
 {
-  // md_z->min_bound_interrupt_handler();
+  md_z->min_bound_interrupt_handler();
   if (coordinate_mode.ISR_get() && md_z->get_direction() == 1)
   {
     reset.ISR_put(true);
@@ -362,7 +362,7 @@ ISR(PORTF_INT0_vect)
 
 ISR(PORTF_INT1_vect)
 {
-  // md_z->max_bound_interrupt_handler();
+  md_z->max_bound_interrupt_handler();
   if (coordinate_mode.ISR_get() && md_z->get_direction() == 0)
   {
     reset.ISR_put(true);

@@ -85,8 +85,14 @@ class DM542T
   virtual void take_step(void);
   
   virtual void set_signal_low(void);
+
+  void min_bound_interrupt_handler( ) ;
+
+  void max_bound_interrupt_handler( ) ;
   
   virtual bool get_status(void);
+
+  void reset_steps( ) { steps = 0 ; }
   
 };
 

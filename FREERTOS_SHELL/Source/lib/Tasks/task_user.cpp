@@ -181,12 +181,20 @@ void task_user::run (void)
 							*p_serial << PMS ("Entering config mode") << endl;
 							transition_to(3);
 							break;
+
+						case( CMD_VIRTUAL_ORIGIN_REACHED ):
+
+							xmotor_on.put(0) ;
+							ymotor_on.put(0) ;
+							zmotor_on.put(0) ;
+							break ;
 							
 						case('e'):
 							drawing_mode.put(true);
 							sensor_delay.put(0);
 							sensor_sample_number.put(1);
 							transition_to(1);
+							break ;
 							
 						case('i'):
 							if (!(incremental_mode.get()))

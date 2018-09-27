@@ -171,6 +171,23 @@ void DM542T::set_signal_low(void)
   thisInterruptTimer->low();
 }
 
+void DM542T::min_bound_interrupt_handler(void)
+{
+  if (get_direction() == 1)
+  {
+    motorOff();
+    reset_steps();
+  }
+}
+
+void DM542T::max_bound_interrupt_handler(void)
+{
+  if (get_direction() == 0)
+  {
+    motorOff();
+  }
+}
+
 
 //-------------------------------------------------------------------------------------
 /** This method returns the enable-status of the motor.
