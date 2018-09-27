@@ -48,6 +48,11 @@
 #include "lib/Tasks/task_sensor.h"
 #include "lib/Tasks/task_thermocouple.h"
 
+// Uncomment the line below to minimize pin manipulation
+// by creating fake board drivers
+#define USE_FAKE_DRIVERS
+
+
 volatile int counter;
 
 shared_data<bool> xmotor_complete;
@@ -213,30 +218,46 @@ int main (void)
   //therm10 = new MAX31855(spi, &PORTD, PIN2_bm);
   //therm11 = new MAX31855(spi, &PORTC, PIN4_bm);
   //therm12 = new MAX31855(spi, &PORTC, PIN5_bm);
-  // adc = new ADC(&ADCB, &(ADCB.CH0));
-  // sbg01 = new SBG01(adc, 6.28930818);
+  #ifndef USE_FAKE_DRIVERS
+  adc = new ADC(&ADCB, &(ADCB.CH0));
+  sbg01 = new SBG01(adc, 6.28930818);
+  #endif
+
+  #ifdef USE_FAKE_DRIVERS
   sbg01 = new SBG01 ( ) ;
+  #endif
   // timer_D1_pin4 = new InterruptTimer (&PORTD, &TCD1, PIN4_bm, TC_CCAINTLVL_HI_gc);
   // timer_D0_pin3 = new InterruptTimer (&PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc);
   // timer_C0_pin0 = new InterruptTimer (&PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc);
-  // md_x = new DM542T ( &PORTA, PIN2_bm, PIN3_bm, 8, &PORTD, &TCD1, PIN4_bm, TC_CCAINTLVL_HI_gc );
-  // md_y = new DM542T ( &PORTA, PIN4_bm, PIN5_bm, 8, &PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc );
-  // md_z = new DM542T ( &PORTA, PIN6_bm, PIN7_bm, 8, &PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc );
+  #ifndef USE_FAKE_DRIVERS
+  md_x = new DM542T ( &PORTA, PIN2_bm, PIN3_bm, 8, &PORTD, &TCD1, PIN4_bm, TC_CCAINTLVL_HI_gc );
+  md_y = new DM542T ( &PORTA, PIN4_bm, PIN5_bm, 8, &PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc );
+  md_z = new DM542T ( &PORTA, PIN6_bm, PIN7_bm, 8, &PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc );
+  #endif
+
+  #ifdef USE_FAKE_DRIVERS
   md_x = new FakeDM542T ( 8 ) ;
   md_y = new FakeDM542T ( 8 ) ;
   md_z = new FakeDM542T ( 8 ) ;
-  // lim_x1 = new DeviceDriver::LimitSwitch ( &PORTA, PIN0_bm, 0, 0, EVSYS_CHMUX_PORTA_PIN0_gc);
-  // lim_x2 = new DeviceDriver::LimitSwitch ( &PORTA, PIN1_bm, 0, 1, EVSYS_CHMUX_PORTA_PIN1_gc);
-  // lim_y1 = new DeviceDriver::LimitSwitch ( &PORTE, PIN5_bm, 0, 0, EVSYS_CHMUX_PORTE_PIN5_gc);
-  // lim_y2 = new DeviceDriver::LimitSwitch ( &PORTE, PIN4_bm, 0, 1, EVSYS_CHMUX_PORTE_PIN4_gc);
-  // lim_z1 = new DeviceDriver::LimitSwitch ( &PORTF, PIN1_bm, 0, 0, EVSYS_CHMUX_PORTF_PIN1_gc);
-  // lim_z2 = new DeviceDriver::LimitSwitch ( &PORTF, PIN2_bm, 0, 1, EVSYS_CHMUX_PORTF_PIN2_gc);
+  #endif
+
+  #ifndef USE_FAKE_DRIVERS
+  lim_x1 = new DeviceDriver::LimitSwitch ( &PORTA, PIN0_bm, 0, 0, EVSYS_CHMUX_PORTA_PIN0_gc);
+  lim_x2 = new DeviceDriver::LimitSwitch ( &PORTA, PIN1_bm, 0, 1, EVSYS_CHMUX_PORTA_PIN1_gc);
+  lim_y1 = new DeviceDriver::LimitSwitch ( &PORTE, PIN5_bm, 0, 0, EVSYS_CHMUX_PORTE_PIN5_gc);
+  lim_y2 = new DeviceDriver::LimitSwitch ( &PORTE, PIN4_bm, 0, 1, EVSYS_CHMUX_PORTE_PIN4_gc);
+  lim_z1 = new DeviceDriver::LimitSwitch ( &PORTF, PIN1_bm, 0, 0, EVSYS_CHMUX_PORTF_PIN1_gc);
+  lim_z2 = new DeviceDriver::LimitSwitch ( &PORTF, PIN2_bm, 0, 1, EVSYS_CHMUX_PORTF_PIN2_gc);
+  #endif
+
+  #ifdef USE_FAKE_DRIVERS
   lim_x1 = new DeviceDriver::LimitSwitch ( ) ;
   lim_x2 = new DeviceDriver::LimitSwitch ( ) ;
   lim_y1 = new DeviceDriver::LimitSwitch ( ) ;
   lim_y2 = new DeviceDriver::LimitSwitch ( ) ;
   lim_z1 = new DeviceDriver::LimitSwitch ( ) ;
   lim_z2 = new DeviceDriver::LimitSwitch ( ) ;
+  #endif
   
   
   // The user interface is at low priority; it could have been run in the idle task

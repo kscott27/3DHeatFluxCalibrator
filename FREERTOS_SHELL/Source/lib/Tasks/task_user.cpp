@@ -38,6 +38,10 @@
  */
 const portTickType ticks_to_delay = ((configTICK_RATE_HZ / 1000) * 5);
 
+const char CMD_CONFIG_MODE = 'a' ;
+const char CMD_VIRTUAL_LIMIT_SWITCH = 'l' ;
+const char CMD_VIRTUAL_ORIGIN_REACHED = 'o' ;
+
 
 //-------------------------------------------------------------------------------------
 /** This constructor creates a new data acquisition task. Its main job is to call the
@@ -170,7 +174,7 @@ void task_user::run (void)
 					atoi_index++;
 					switch(char_in)
 					{
-						case('a'):
+						case(CMD_CONFIG_MODE):
 						
 							//print_config_mode_menu();
 							configuration_mode.put(true);
