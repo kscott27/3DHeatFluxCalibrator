@@ -35,6 +35,7 @@
 #include "lib/PeripheralDriver/Timer.h"
 #include "lib/PeripheralDriver/InterruptTimer.h"
 #include "lib/DeviceDriver/DM542T.h"
+#include "lib/DeviceDriver/FakeDM542T.h"
 #include "lib/DeviceDriver/LimitSwitch.h"
 #include "lib/PeripheralDriver/SPI_Master.h"
 #include "lib/DeviceDriver/MAX31855.h"
@@ -221,41 +222,44 @@ int main (void)
   // md_x = new DM542T ( &PORTA, PIN2_bm, PIN3_bm, 8, &PORTD, &TCD1, PIN4_bm, TC_CCAINTLVL_HI_gc );
   // md_y = new DM542T ( &PORTA, PIN4_bm, PIN5_bm, 8, &PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc );
   // md_z = new DM542T ( &PORTA, PIN6_bm, PIN7_bm, 8, &PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc );
+  md_x = new FakeDM542T ( 8 ) ;
+  md_y = new FakeDM542T ( 8 ) ;
+  md_z = new FakeDM542T ( 8 ) ;
   // lim_x1 = new DeviceDriver::LimitSwitch ( &PORTA, PIN0_bm, 0, 0, EVSYS_CHMUX_PORTA_PIN0_gc);
   // lim_x2 = new DeviceDriver::LimitSwitch ( &PORTA, PIN1_bm, 0, 1, EVSYS_CHMUX_PORTA_PIN1_gc);
   // lim_y1 = new DeviceDriver::LimitSwitch ( &PORTE, PIN5_bm, 0, 0, EVSYS_CHMUX_PORTE_PIN5_gc);
   // lim_y2 = new DeviceDriver::LimitSwitch ( &PORTE, PIN4_bm, 0, 1, EVSYS_CHMUX_PORTE_PIN4_gc);
   // lim_z1 = new DeviceDriver::LimitSwitch ( &PORTF, PIN1_bm, 0, 0, EVSYS_CHMUX_PORTF_PIN1_gc);
   // lim_z2 = new DeviceDriver::LimitSwitch ( &PORTF, PIN2_bm, 0, 1, EVSYS_CHMUX_PORTF_PIN2_gc);
+  lim_x1 = new DeviceDriver::LimitSwitch ( ) ;
+  lim_x2 = new DeviceDriver::LimitSwitch ( ) ;
+  lim_y1 = new DeviceDriver::LimitSwitch ( ) ;
+  lim_y2 = new DeviceDriver::LimitSwitch ( ) ;
+  lim_z1 = new DeviceDriver::LimitSwitch ( ) ;
+  lim_z2 = new DeviceDriver::LimitSwitch ( ) ;
   
   
   // The user interface is at low priority; it could have been run in the idle task
   // but it is desired to exercise the RTOS more thoroughly in this test program
   new task_user ( "UserInt", task_priority (0), 128, &ser_dev ) ;
   
+  new task_md ("MDX", task_priority(8), 128, &ser_dev, md_x, lim_x1, lim_x2, &xlocations,
+  &x_max_velocity, &xmotor_on, &xmotor_complete, 8);
+  
+  new task_md ("MDY", task_priority(8), 128, &ser_dev, md_y, lim_y1, lim_y2, &ylocations,
+  &y_max_velocity, &ymotor_on, &ymotor_complete, 8);
+  
+  new task_md ("MDZ", task_priority(8), 128, &ser_dev, md_z, lim_z1, lim_z2, &zlocations,
+  &z_max_velocity, &zmotor_on, &zmotor_complete, 8);
+
   // new task_md ( "MDX", task_priority(8), 128, &ser_dev, 
-  //   &PORTA, PIN2_bm, PIN3_bm, 8, &PORTD, &TCD1, PIN4_bm, TC_CCAINTLVL_HI_gc,
-  //   &xlocations, &x_max_velocity, &xmotor_on, &xmotor_complete,
-  //   lim_x1, lim_x2 ) ;
+  //   8 ) ;
   
   // new task_md ("MDY", task_priority(8), 128, &ser_dev, 
-  //   &PORTA, PIN4_bm, PIN5_bm, 8, &PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc, &ylocations,
-  //   &y_max_velocity, &ymotor_on, &ymotor_complete, 
-  //   lim_y1, lim_y2 );
+  //   8 );
   
   // new task_md ("MDZ", task_priority(8), 128, &ser_dev, 
-  //   &PORTA, PIN6_bm, PIN7_bm, 8, &PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc, &zlocations,
-  //   &z_max_velocity, &zmotor_on, &zmotor_complete, 
-  //   lim_z1, lim_z2 );
-
-  new task_md ( "MDX", task_priority(8), 128, &ser_dev, 
-    8 ) ;
-  
-  new task_md ("MDY", task_priority(8), 128, &ser_dev, 
-    8 );
-  
-  new task_md ("MDZ", task_priority(8), 128, &ser_dev, 
-    8 );
+  //   8 );
   
   new task_sensor ("Gardon_Gauge", task_priority(9), 4500, &ser_dev, sbg01);
 

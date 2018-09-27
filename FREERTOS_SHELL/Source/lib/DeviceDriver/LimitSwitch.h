@@ -28,6 +28,10 @@ namespace DeviceDriver
     bool engaged;
     
     public:
+
+    inline LimitSwitch ( )
+      : PeripheralDriver::EventInterrupt( )
+    { }
     
     LimitSwitch ( PORT_t* port, uint8_t input_bm, uint8_t EVENTCHnMUX, 
       uint8_t PORT_INTnMASK, uint8_t EVSYS_CHMUX_PORTx_PINn_gc ) ;

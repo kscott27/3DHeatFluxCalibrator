@@ -62,13 +62,14 @@
  */
 
 class task_md
-  : public frt_task,
-    public DM542T
+  : public frt_task
 {
 private:
   // No private variables or methods for this class
 
 protected:
+
+  typedef DeviceDriver::LimitSwitch LimitSwitch ;
 
   DM542T * md ;
   DeviceDriver::LimitSwitch * LS_min ;
@@ -90,6 +91,7 @@ protected:
   frt_queue<uint32_t> * max_velocity ;
   uint16_t freq_hz ;
   uint32_t max_vel ;
+  uint16_t microstep_scaler ;
   
   // This method displays a simple help message telling the user what to do. It's
   // protected so that only methods of this class or possibly descendents can use it
@@ -102,26 +104,30 @@ public:
 
   const char* task_name;
 
-  task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
-    uint16_t microstep_scaler ) ; 
-  
-  // This constructor creates a motor driver task object
-  task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
-    PORT_t* logic_port, 
-    uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
-    PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm,
-    frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, 
-    shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
-    DeviceDriver::LimitSwitch * LS_min, DeviceDriver::LimitSwitch * LS_max ) ;
+  task_md (const char*, unsigned portBASE_TYPE, size_t, emstream*, DM542T* md, LimitSwitch* LS_min, LimitSwitch* LS_max,
+  frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
+  uint16_t microstep_scaler);
 
-  // This constructor creates a motor driver task object
-  task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
-    PORT_t* logic_port, 
-    uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
-    PORT_t* timer_port, TC1_t* timer1, uint8_t pin_bm, uint8_t int_lvl_bm,
-    frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, 
-    shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
-    DeviceDriver::LimitSwitch * LS_min, DeviceDriver::LimitSwitch * LS_max ) ;
+  // task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
+  //   uint16_t microstep_scaler ) ; 
+  
+  // // This constructor creates a motor driver task object
+  // task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
+  //   PORT_t* logic_port, 
+  //   uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
+  //   PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm,
+  //   frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, 
+  //   shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
+  //   DeviceDriver::LimitSwitch * LS_min, DeviceDriver::LimitSwitch * LS_max ) ;
+
+  // // This constructor creates a motor driver task object
+  // task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
+  //   PORT_t* logic_port, 
+  //   uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
+  //   PORT_t* timer_port, TC1_t* timer1, uint8_t pin_bm, uint8_t int_lvl_bm,
+  //   frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, 
+  //   shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
+  //   DeviceDriver::LimitSwitch * LS_min, DeviceDriver::LimitSwitch * LS_max ) ;
 
   /** This method is called by the RTOS once to run the task loop for ever and ever.
    */
