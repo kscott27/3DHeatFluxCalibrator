@@ -38,6 +38,11 @@
  */
 const portTickType ticks_to_delay = ((configTICK_RATE_HZ / 1000) * 5);
 
+task_md::task_md ( const char * a_name, unsigned portBASE_TYPE a_priority,
+  size_t a_stack_size, emstream * p_ser_dev, uint16_t microstep_scaler )
+  : frt_task( a_name, a_priority, a_stack_size, p_ser_dev ),
+    DM542T( microstep_scaler )
+{ }
 
 //-------------------------------------------------------------------------------------
 /** This constructor creates a new motor driver task. Its main job is to call the

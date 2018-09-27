@@ -100,7 +100,10 @@ protected:
 
 public:
 
-    const char* task_name;
+  const char* task_name;
+
+  task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
+    uint16_t microstep_scaler ) ; 
   
   // This constructor creates a motor driver task object
   task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 

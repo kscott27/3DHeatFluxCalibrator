@@ -54,6 +54,10 @@ class DM542T
   
   // (Timer* timer, PORT_t* logic_port, uint8_t ena_bm, uint8_t dir_bm, uint8_t microstep_scaler);
   
+  DM542T ( uint16_t microstep_scaler )
+    : VelocityControl( microstep_scaler ) 
+    { }
+
   DM542T(PORT_t* logic_port, 
     uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
     PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm) ;
@@ -62,35 +66,27 @@ class DM542T
     uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
     PORT_t* timer_port, TC1_t* timer1, uint8_t pin_bm, uint8_t int_lvl_bm) ;
   
-  bool motorOn(void);
+  virtual bool motorOn(void);
+    
+  virtual void motorCW(void);
   
-  bool check_bounds(void);
+  virtual void motorCCW(void);
   
-  void motorCW(void);
+  virtual void motorOff(void);
   
-  void motorCCW(void);
+  virtual void disableCW(void);
   
-  void motorOff(void);
+  virtual void disableCCW(void);
   
-  void disableCW(void);
+  virtual void free_motion(void);
   
-  void disableCCW(void);
+  virtual uint8_t get_direction(void);
   
-  void free_motion(void);
+  virtual void take_step(void);
   
-  uint8_t get_direction(void);
+  virtual void set_signal_low(void);
   
-  void take_step(void);
-  
-  void set_signal_low(void);
-  
-  void set_step_boundary(void);
-  
-  void set_min_step_boundary(void);
-  
-  void set_max_step_boundary(void);
-  
-  bool get_status(void);
+  virtual bool get_status(void);
   
 };
 

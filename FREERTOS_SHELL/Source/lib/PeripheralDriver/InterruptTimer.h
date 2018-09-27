@@ -35,6 +35,8 @@ class InterruptTimer
 	uint32_t freq_hz;
 	
 	public:
+
+	InterruptTimer ( ) { }
 	
 	InterruptTimer(PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm);
 	

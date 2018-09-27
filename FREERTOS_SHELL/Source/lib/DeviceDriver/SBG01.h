@@ -26,6 +26,8 @@ class SBG01
   float sensitivity;
   
   public:
+
+  SBG01 ( ) { }
   
   SBG01 (ADC* adc, float sensitivity);
   
