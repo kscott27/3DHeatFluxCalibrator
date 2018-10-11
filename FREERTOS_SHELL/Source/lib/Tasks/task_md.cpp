@@ -182,8 +182,13 @@ void task_md::run (void)
 			// to get a starting location for all subsequent steps.
 			case (0):
 			
+				#ifdef USE_FAKE_DRIVERS
+				transition_to( 2 ) ;
+				#endif
+				#ifndef USE_FAKE_DRIVERS
 				motor_operator->put(2);
 				transition_to(3);
+				#endif
 			
 			    break;
 			

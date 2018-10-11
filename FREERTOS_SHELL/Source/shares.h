@@ -77,4 +77,9 @@ extern shared_data<bool> reset;
 extern shared_data<bool> drawing_mode;
 extern shared_data<uint32_t> gen_max_v;
 
+// Uncomment the line below to minimize pin manipulation
+// by creating fake board drivers
+#define USE_FAKE_DRIVERS
+// const float STD_ACCEL = 1.5 ;
+
 #endif // _SHARES_H_

@@ -48,10 +48,7 @@
 #include "lib/Tasks/task_sensor.h"
 #include "lib/Tasks/task_thermocouple.h"
 
-// Uncomment the line below to minimize pin manipulation
-// by creating fake board drivers
-#define USE_FAKE_DRIVERS
-
+#include "lib/Motion/MotionSegment.h"
 
 volatile int counter;
 
@@ -282,7 +279,7 @@ int main (void)
   // new task_md ("MDZ", task_priority(8), 128, &ser_dev, 
   //   8 );
   
-  new task_sensor ("Gardon_Gauge", task_priority(9), 4500, &ser_dev, sbg01);
+  new task_sensor ("Gardon_Gauge", task_priority(9), 500, &ser_dev, sbg01);
 
     //new task_thermocouple ("Therm1", task_priority(6), 128, &ser_dev, therm10);
 //

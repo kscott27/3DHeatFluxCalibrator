@@ -14,6 +14,8 @@ Source\lib\freertos\croutine.c
 
 Source\lib\Motion\MotionControl.cpp
 
+Source\lib\Motion\MotionSegment.cpp
+
 Source\lib\Motion\VelocityControl.cpp
 
 Source\lib\PeripheralDriver\ADC.cpp

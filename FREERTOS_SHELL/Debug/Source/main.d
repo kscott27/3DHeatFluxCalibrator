@@ -39,8 +39,9 @@ Source/main.d Source/main.o: ../Source/main.cpp \
  ../Source/lib/DeviceDriver/../Motion/VelocityControl.h \
  ../Source/lib/DeviceDriver/../Motion/MotionControl.h \
  ../Source/lib/DeviceDriver/../Motion/../PeripheralDriver/InterruptTimer.h \
- ../Source/lib/DeviceDriver/LimitSwitch.h \
+ ../Source/lib/DeviceDriver/FakeDM542T.h \
  ../Source/lib/DeviceDriver/DM542T.h \
+ ../Source/lib/DeviceDriver/LimitSwitch.h \
  ../Source/lib/DeviceDriver/../PeripheralDriver/EventInterrupt.h \
  ../Source/lib/PeripheralDriver/SPI_Master.h \
  ../Source/lib/DeviceDriver/MAX31855.h \
@@ -58,7 +59,8 @@ Source/main.d Source/main.o: ../Source/main.cpp \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../Source/lib/Tasks/../DeviceDriver/SBG01.h \
  ../Source/lib/Tasks/task_thermocouple.h \
- ../Source/lib/Tasks/../DeviceDriver/MAX31855.h
+ ../Source/lib/Tasks/../DeviceDriver/MAX31855.h \
+ ../Source/lib/Motion/MotionSegment.h ../Source/lib/Motion/../../shares.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -162,9 +164,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 ../Source/lib/DeviceDriver/../Motion/../PeripheralDriver/InterruptTimer.h:
 
-../Source/lib/DeviceDriver/LimitSwitch.h:
+../Source/lib/DeviceDriver/FakeDM542T.h:
 
 ../Source/lib/DeviceDriver/DM542T.h:
+
+../Source/lib/DeviceDriver/LimitSwitch.h:
 
 ../Source/lib/DeviceDriver/../PeripheralDriver/EventInterrupt.h:
 
@@ -207,3 +211,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Source/lib/Tasks/task_thermocouple.h:
 
 ../Source/lib/Tasks/../DeviceDriver/MAX31855.h:
+
+../Source/lib/Motion/MotionSegment.h:
+
+../Source/lib/Motion/../../shares.h:

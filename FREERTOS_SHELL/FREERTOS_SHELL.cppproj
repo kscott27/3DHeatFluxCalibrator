@@ -197,6 +197,9 @@
     <Compile Include="Source\lib\DeviceDriver\DM542T.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Source\lib\DeviceDriver\FakeDM542T.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Source\lib\DeviceDriver\LimitSwitch.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -231,6 +234,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Source\lib\Motion\MotionControl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\MotionSegment.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\MotionSegment.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Source\lib\Motion\VelocityControl.cpp">
