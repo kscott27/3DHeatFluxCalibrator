@@ -17,84 +17,85 @@
 
 #include "../PeripheralDriver/Timer.h"
 #include "../PeripheralDriver/InterruptTimer.h"
-#include "../Motion/VelocityControl.h"
 
-class DM542T
-  : public InterruptTimer,
-    public Motion::VelocityControl
+namespace DeviceDriver
 {
-  protected:
-  
-  Timer* timer;
-  InterruptTimer* interrupt_timer;
-  PORT_t* logic_port;
-  PORT_t* pwm_port;
-  uint8_t ena_bm;
-  uint8_t dir_bm;
-  uint8_t pwm_bm; 
-  bool rising_edge;
-  int8_t duty_cycle;
-  volatile uint32_t pulse_high;
-  volatile uint32_t pulse_low;
-  int32_t pulse_period;
-  int32_t min_boundary_step_count;
-  int32_t max_boundary_step_count;
-  bool enabled;
-  uint8_t direction;
-  bool disable_CW;
-  bool disable_CCW;
-  uint32_t ramp_run_count = 0;
-  uint32_t ramp_ctrl_init_freq_hz = 0;
-  uint32_t ramp_ctrl_final_freq_hz = 0;
-  uint32_t ramp_ctrl_run_span = 0;
-  uint32_t ramp_ctrl_freq_hz = 0;
-  
-  
+
+  class DM542T
+  {
   public:
+    typedef PeripheralDriver::InterruptTimer InterruptTimer;
   
-  // (Timer* timer, PORT_t* logic_port, uint8_t ena_bm, uint8_t dir_bm, uint8_t microstep_scaler);
-  
-  DM542T ( uint16_t microstep_scaler )
-    : VelocityControl( microstep_scaler ) 
+    inline DM542T( InterruptTimer * t )
+      : timer_(t)
     { }
-
-  DM542T(PORT_t* logic_port, 
-    uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
-    PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm) ;
-
-  DM542T(PORT_t* logic_port, 
-    uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
-    PORT_t* timer_port, TC1_t* timer1, uint8_t pin_bm, uint8_t int_lvl_bm) ;
   
-  virtual bool motorOn(void);
+    DM542T(PORT_t* logic_port, 
+      uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
+      PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm) ;
+  
+    DM542T(PORT_t* logic_port, 
+      uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
+      PORT_t* timer_port, TC1_t* timer1, uint8_t pin_bm, uint8_t int_lvl_bm) ;
     
-  virtual void motorCW(void);
+    virtual bool motorOn(void);
+      
+    virtual void motorCW(void);
+    
+    virtual void motorCCW(void);
+    
+    virtual void motorOff(void);
+    
+    virtual void disableCW(void);
+    
+    virtual void disableCCW(void);
+    
+    virtual void free_motion(void);
+    
+    virtual uint8_t get_direction(void);
+    
+    virtual void take_step(void);
+    
+    virtual void set_signal_low(void);
   
-  virtual void motorCCW(void);
+    void min_bound_interrupt_handler( ) ;
   
-  virtual void motorOff(void);
+    void max_bound_interrupt_handler( ) ;
+    
+    virtual bool get_status(void);
   
-  virtual void disableCW(void);
+    void reset_steps( ) { steps = 0 ; }
   
-  virtual void disableCCW(void);
-  
-  virtual void free_motion(void);
-  
-  virtual uint8_t get_direction(void);
-  
-  virtual void take_step(void);
-  
-  virtual void set_signal_low(void);
+  protected:
+    
+    uint32_t steps;
+    Timer* timer;
+    InterruptTimer * timer_;
+    PORT_t* logic_port;
+    PORT_t* pwm_port;
+    uint8_t ena_bm;
+    uint8_t dir_bm;
+    uint8_t pwm_bm; 
+    bool rising_edge;
+    int8_t duty_cycle;
+    volatile uint32_t pulse_high;
+    volatile uint32_t pulse_low;
+    int32_t pulse_period;
+    int32_t min_boundary_step_count;
+    int32_t max_boundary_step_count;
+    bool enabled;
+    uint8_t direction;
+    bool disable_CW;
+    bool disable_CCW;
+    uint32_t ramp_run_count = 0;
+    uint32_t ramp_ctrl_init_freq_hz = 0;
+    uint32_t ramp_ctrl_final_freq_hz = 0;
+    uint32_t ramp_ctrl_run_span = 0;
+    uint32_t ramp_ctrl_freq_hz = 0;
+    
+  };
 
-  void min_bound_interrupt_handler( ) ;
-
-  void max_bound_interrupt_handler( ) ;
-  
-  virtual bool get_status(void);
-
-  void reset_steps( ) { steps = 0 ; }
-  
-};
+}
 
 
 

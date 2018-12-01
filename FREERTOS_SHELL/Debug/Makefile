@@ -38,7 +38,6 @@ SUBDIRS :=  \
 ../Source/lib/DeviceDriver/ \
 ../Source/lib/freertos \
 ../Source/lib/frtcpp \
-../Source/lib/Motion/ \
 ../Source/lib/PeripheralDriver/ \
 ../Source/lib/serial \
 ../Source/lib/misc \
@@ -52,16 +51,13 @@ C_SRCS +=  \
 ../Source/lib/DeviceDriver/MAX31855.cpp \
 ../Source/lib/DeviceDriver/SBG01.cpp \
 ../Source/lib/freertos/croutine.c \
-../Source/lib/Motion/MotionControl.cpp \
-../Source/lib/Motion/MotionSegment.cpp \
-../Source/lib/Motion/VelocityControl.cpp \
 ../Source/lib/PeripheralDriver/ADC.cpp \
 ../Source/lib/PeripheralDriver/EventInterrupt.cpp \
 ../Source/lib/PeripheralDriver/InterruptTimer.cpp \
 ../Source/lib/PeripheralDriver/SPI_Master.cpp \
 ../Source/lib/PeripheralDriver/Timer.cpp \
 ../Source/lib/Tasks/task_LED.cpp \
-../Source/lib/Tasks/task_md.cpp \
+../Source/lib/Tasks/taskMotion.cpp \
 ../Source/lib/Tasks/task_sensor.cpp \
 ../Source/lib/Tasks/task_thermocouple.cpp \
 ../Source/lib/Tasks/task_user.cpp \
@@ -124,16 +120,13 @@ Source/lib/DeviceDriver/LimitSwitch.o \
 Source/lib/DeviceDriver/MAX31855.o \
 Source/lib/DeviceDriver/SBG01.o \
 Source/lib/freertos/croutine.o \
-Source/lib/Motion/MotionControl.o \
-Source/lib/Motion/MotionSegment.o \
-Source/lib/Motion/VelocityControl.o \
 Source/lib/PeripheralDriver/ADC.o \
 Source/lib/PeripheralDriver/EventInterrupt.o \
 Source/lib/PeripheralDriver/InterruptTimer.o \
 Source/lib/PeripheralDriver/SPI_Master.o \
 Source/lib/PeripheralDriver/Timer.o \
 Source/lib/Tasks/task_LED.o \
-Source/lib/Tasks/task_md.o \
+Source/lib/Tasks/taskMotion.o \
 Source/lib/Tasks/task_sensor.o \
 Source/lib/Tasks/task_thermocouple.o \
 Source/lib/Tasks/task_user.o \
@@ -189,16 +182,13 @@ Source/lib/DeviceDriver/LimitSwitch.o \
 Source/lib/DeviceDriver/MAX31855.o \
 Source/lib/DeviceDriver/SBG01.o \
 Source/lib/freertos/croutine.o \
-Source/lib/Motion/MotionControl.o \
-Source/lib/Motion/MotionSegment.o \
-Source/lib/Motion/VelocityControl.o \
 Source/lib/PeripheralDriver/ADC.o \
 Source/lib/PeripheralDriver/EventInterrupt.o \
 Source/lib/PeripheralDriver/InterruptTimer.o \
 Source/lib/PeripheralDriver/SPI_Master.o \
 Source/lib/PeripheralDriver/Timer.o \
 Source/lib/Tasks/task_LED.o \
-Source/lib/Tasks/task_md.o \
+Source/lib/Tasks/taskMotion.o \
 Source/lib/Tasks/task_sensor.o \
 Source/lib/Tasks/task_thermocouple.o \
 Source/lib/Tasks/task_user.o \
@@ -254,16 +244,13 @@ Source/lib/DeviceDriver/LimitSwitch.d \
 Source/lib/DeviceDriver/MAX31855.d \
 Source/lib/DeviceDriver/SBG01.d \
 Source/lib/freertos/croutine.d \
-Source/lib/Motion/MotionControl.d \
-Source/lib/Motion/MotionSegment.d \
-Source/lib/Motion/VelocityControl.d \
 Source/lib/PeripheralDriver/ADC.d \
 Source/lib/PeripheralDriver/EventInterrupt.d \
 Source/lib/PeripheralDriver/InterruptTimer.d \
 Source/lib/PeripheralDriver/SPI_Master.d \
 Source/lib/PeripheralDriver/Timer.d \
 Source/lib/Tasks/task_LED.d \
-Source/lib/Tasks/task_md.d \
+Source/lib/Tasks/taskMotion.d \
 Source/lib/Tasks/task_sensor.d \
 Source/lib/Tasks/task_thermocouple.d \
 Source/lib/Tasks/task_user.d \
@@ -319,16 +306,13 @@ Source/lib/DeviceDriver/LimitSwitch.d \
 Source/lib/DeviceDriver/MAX31855.d \
 Source/lib/DeviceDriver/SBG01.d \
 Source/lib/freertos/croutine.d \
-Source/lib/Motion/MotionControl.d \
-Source/lib/Motion/MotionSegment.d \
-Source/lib/Motion/VelocityControl.d \
 Source/lib/PeripheralDriver/ADC.d \
 Source/lib/PeripheralDriver/EventInterrupt.d \
 Source/lib/PeripheralDriver/InterruptTimer.d \
 Source/lib/PeripheralDriver/SPI_Master.d \
 Source/lib/PeripheralDriver/Timer.d \
 Source/lib/Tasks/task_LED.d \
-Source/lib/Tasks/task_md.d \
+Source/lib/Tasks/taskMotion.d \
 Source/lib/Tasks/task_sensor.d \
 Source/lib/Tasks/task_thermocouple.d \
 Source/lib/Tasks/task_user.d \
@@ -513,12 +497,6 @@ LINKER_SCRIPT_DEP+=
 
 
 
-
-
-
-
-
-
 Source/lib/DeviceDriver/%.o: ../Source/lib/DeviceDriver/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
@@ -530,13 +508,6 @@ Source/lib/freertos/%.o: ../Source/lib/freertos/%.c
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=32000000UL  -I"../Source/lib/freertos" -I"../Source/lib/frtcpp" -I"../Source/lib/misc" -I"../Source/lib/serial" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega256a3bu -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega256a3bu" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-Source/lib/Motion/%.o: ../Source/lib/Motion/%.cpp
-	@echo Building file: $<
-	@echo Invoking: AVR8/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=32000000UL  -I"../Source/lib/freertos" -I"../Source/lib/frtcpp" -I"../Source/lib/misc" -I"../Source/lib/serial" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atxmega256a3bu -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.1.68\gcc\dev\atxmega256a3bu" -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 

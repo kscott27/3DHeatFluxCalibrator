@@ -19,10 +19,7 @@ Source/lib/DeviceDriver/DM542T.d Source/lib/DeviceDriver/DM542T.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  ../Source/lib/DeviceDriver/../PeripheralDriver/Timer.h \
- ../Source/lib/DeviceDriver/../PeripheralDriver/InterruptTimer.h \
- ../Source/lib/DeviceDriver/../Motion/VelocityControl.h \
- ../Source/lib/DeviceDriver/../Motion/MotionControl.h \
- ../Source/lib/DeviceDriver/../Motion/../PeripheralDriver/InterruptTimer.h
+ ../Source/lib/DeviceDriver/../PeripheralDriver/InterruptTimer.h
 
 ../Source/lib/DeviceDriver/DM542T.h:
 
@@ -63,9 +60,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Source/lib/DeviceDriver/../PeripheralDriver/Timer.h:
 
 ../Source/lib/DeviceDriver/../PeripheralDriver/InterruptTimer.h:
-
-../Source/lib/DeviceDriver/../Motion/VelocityControl.h:
-
-../Source/lib/DeviceDriver/../Motion/MotionControl.h:
-
-../Source/lib/DeviceDriver/../Motion/../PeripheralDriver/InterruptTimer.h:

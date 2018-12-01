@@ -61,7 +61,7 @@
  *  with you, they're probably spying on you. 
  */
 
-class task_md
+class taskMotion
   : public frt_task
 {
 private:
@@ -69,7 +69,8 @@ private:
 
 protected:
 
-  typedef DeviceDriver::LimitSwitch LimitSwitch ;
+  typedef DeviceDriver::LimitSwitch LimitSwitch;
+  typedef DeviceDriver::DM542T      DM542T;
 
   DM542T * md ;
   DeviceDriver::LimitSwitch * LS_min ;
@@ -104,7 +105,7 @@ public:
 
   const char* task_name;
 
-  task_md (const char*, unsigned portBASE_TYPE, size_t, emstream*, DM542T* md, LimitSwitch* LS_min, LimitSwitch* LS_max,
+  taskMotion(const char*, unsigned portBASE_TYPE, size_t, emstream*, DM542T* md, LimitSwitch* LS_min, LimitSwitch* LS_max,
   frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
   uint16_t microstep_scaler);
 

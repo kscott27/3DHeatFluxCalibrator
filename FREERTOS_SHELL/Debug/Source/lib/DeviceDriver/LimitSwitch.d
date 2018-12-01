@@ -22,9 +22,6 @@ Source/lib/DeviceDriver/LimitSwitch.d \
  ../Source/lib/DeviceDriver/DM542T.h \
  ../Source/lib/DeviceDriver/../PeripheralDriver/Timer.h \
  ../Source/lib/DeviceDriver/../PeripheralDriver/InterruptTimer.h \
- ../Source/lib/DeviceDriver/../Motion/VelocityControl.h \
- ../Source/lib/DeviceDriver/../Motion/MotionControl.h \
- ../Source/lib/DeviceDriver/../Motion/../PeripheralDriver/InterruptTimer.h \
  ../Source/lib/DeviceDriver/../PeripheralDriver/EventInterrupt.h
 
 ../Source/lib/DeviceDriver/LimitSwitch.h:
@@ -68,11 +65,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Source/lib/DeviceDriver/../PeripheralDriver/Timer.h:
 
 ../Source/lib/DeviceDriver/../PeripheralDriver/InterruptTimer.h:
-
-../Source/lib/DeviceDriver/../Motion/VelocityControl.h:
-
-../Source/lib/DeviceDriver/../Motion/MotionControl.h:
-
-../Source/lib/DeviceDriver/../Motion/../PeripheralDriver/InterruptTimer.h:
 
 ../Source/lib/DeviceDriver/../PeripheralDriver/EventInterrupt.h:

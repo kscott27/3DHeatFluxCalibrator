@@ -12,12 +12,6 @@ Source\lib\DeviceDriver\SBG01.cpp
 
 Source\lib\freertos\croutine.c
 
-Source\lib\Motion\MotionControl.cpp
-
-Source\lib\Motion\MotionSegment.cpp
-
-Source\lib\Motion\VelocityControl.cpp
-
 Source\lib\PeripheralDriver\ADC.cpp
 
 Source\lib\PeripheralDriver\EventInterrupt.cpp
@@ -30,7 +24,7 @@ Source\lib\PeripheralDriver\Timer.cpp
 
 Source\lib\Tasks\task_LED.cpp
 
-Source\lib\Tasks\task_md.cpp
+Source\lib\Tasks\taskMotion.cpp
 
 Source\lib\Tasks\task_sensor.cpp
 

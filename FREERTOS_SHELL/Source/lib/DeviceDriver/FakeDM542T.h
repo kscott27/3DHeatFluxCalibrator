@@ -18,7 +18,7 @@
 #include "DM542T.h"
 
 class FakeDM542T
-  : public DM542T
+  : public DeviceDriver::DM542T
 {
   protected:
   

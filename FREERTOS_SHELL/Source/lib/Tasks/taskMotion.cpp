@@ -30,7 +30,7 @@
 
 #include "shared_data_sender.h"
 #include "shared_data_receiver.h"
-#include "task_md.h"                      // Header for this file
+#include "taskMotion.h"                      // Header for this file
 
 
 /** This constant sets how many RTOS ticks the task delays if the user's not talking.
@@ -38,7 +38,7 @@
  */
 const portTickType ticks_to_delay = ((configTICK_RATE_HZ / 1000) * 5);
 
-task_md::task_md (const char* a_name,
+taskMotion::taskMotion(const char* a_name,
 unsigned portBASE_TYPE a_priority,
 size_t a_stack_size,
 emstream* p_ser_dev, DM542T* md,  
@@ -155,7 +155,7 @@ microstep_scaler(microstep_scaler)
  *  in ways specified by the user.
  */
 
-void task_md::run (void)
+void taskMotion::run (void)
 {
 	char char_in;                           // Character read from serial device
 	time_stamp a_time;                      // Holds the time so it can be displayed
@@ -167,244 +167,8 @@ void task_md::run (void)
 	// This is an infinite loop; it runs until the power is turned off. There is one 
 	// such loop inside the code for each task
 	for (;;)
-	{
-		//if (++state_delay_counter == 75)
-		//{
-			//*p_serial << task_name << state << endl;
-			//state_delay_counter = 0;
-		//}
+	{		
 		
-		// Run the finite state machine. The variable 'state' is kept by the parent class
-		switch (state)
-		{
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-			// In state 0, the motor task is powered CW back to the origin location in order
-			// to get a starting location for all subsequent steps.
-			case (0):
-			
-				#ifdef USE_FAKE_DRIVERS
-				transition_to( 2 ) ;
-				#endif
-				#ifndef USE_FAKE_DRIVERS
-				motor_operator->put(2);
-				transition_to(3);
-				#endif
-			
-			    break;
-			
-			
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-			// In state 1, the motor is returning to the origin and waiting for the limit
-			// switch to power it off.
-			case (1):
-				
-				md->rampHandler();
-				
-                if (md->get_status())
-				{
-					motor_operator->put(0);
-					*p_serial << PMS ("S2") << endl;
-					transition_to(2);
-				}
-				
-				break;
-				
-
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-			// In state 2, the motor is idle - waiting for a command to switch it into 
-			// a certain mode.
-			case (2):
-				//*p_serial << task_name << PMS ("S2") << endl;
-				if(direct_mode.get())
-				{
-					transition_to(3);
-				}
-				else if(coordinate_mode.get())
-				{
-					transition_to(5);
-				}
-				else if(incremental_mode.get())
-				{
-					transition_to(5);
-				}
-				break;
-			
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-			// In State 3, the motor is in the off state of direct operation mode.	
-			case (3):
-			    
-				if (motor_operator->get() == 1)
-				{
-					md->motorCCW();
-					md->setRamp( md->thisInterruptTimer, 500, gen_max_v.get() );
-					motor_on = motorOn();
-					if (motor_on)
-					{
-						transition_to(4);
-					}
-					else
-					{
-						motor_operator->put(0);
-						transition_to(2);
-					}
-				}
-				else if (motor_operator->get() == 2)
-				{
-					md->motorCW();
-					md->setRamp( md->thisInterruptTimer, 500, gen_max_v.get() );
-					motor_on = motorOn();
-					if (motor_on)
-					{
-						transition_to(4);
-					}	
-					else
-					{
-						motor_operator->put(0);
-						transition_to(2);
-					}	
-				}
-				else
-				{
-					transition_to(2);
-				}
-							
-				break;
-			
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-			// In State 4, the motor is enabled, waiting for a stop command.
-			case (4):
-								
-				md->rampHandler();
-				
-				if(md->get_status() == false)
-				{
-					motor_operator->put(0);
-				}
-				
-			    if(motor_operator->get() == 0)
-				{
-					md->motorOff();
-					*p_serial << task_name << PMS ("loc:") << md->getSteps() << endl;
-					*p_serial << task_name << PMS ("S") << endl;
-					transition_to(2);
-				}
-				
-				if (++delay_counter == 5)
-				{
-					*p_serial << task_name << PMS ("loc:") << md->getSteps() << endl;
-					delay_counter = 0;
-				}
-				
-				break;
-			
-			
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-			// In State 5, the motor is disabled, and awaits a signal from the sensor before
-			// it begins calculating its operation parameters to reach the next destination.	
-			case (5):
-							
-				if (!(coordinate_mode.get()) && !(incremental_mode.get()) && !(drawing_mode.get()))
-				{
-					transition_to(2);
-				}	
-				else if(next_node.get())
-				{
-					max_vel = gen_max_v.get();
-					transition_to(6);
-				}
-				 
-				break;
-			
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-			// In State 6, the motor is calculating how many steps it must take to reach 
-			// the desired node.
-			case (6):
-			    
-				steps = md->getSteps();
-				step_destination = locations->get();
-				if (drawing_mode.get())
-				{
-					max_vel = max_velocity->get();
-					*p_serial << task_name << PMS ("vel: ") << max_vel << endl;
-				}
-							
-				if (steps < step_destination)
-				{
-					md->motorCCW();
-					md->setRamp( md->thisInterruptTimer, 500, max_vel ) ;		
-					motorOn();
-				}
-				else if (steps > step_destination)
-				{
-					md->motorCW();
-					md->setRamp( md->thisInterruptTimer, 500, max_vel );
-					motorOn();
-				}
-				
-				transition_to(7); 
-				
-				break;
-			
-			// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-			// In State 7, the motor is enabled until it reaches its destination.
-			case (7):
-			
-				if (pause.get())
-				{
-					md->motorOff();
-					transition_to(8);
-				}
-				
-				freq_hz = md->rampHandler();
-			    
-			    if(md->get_direction() == 0)
-				{
-					if(md->getSteps() >= step_destination)
-					{
-						md->motorOff();
-						*p_serial << task_name << PMS ("S") << endl;
-						*p_serial << task_name << PMS ("loc:") << md->getSteps() << endl;
-						motor_complete->put(true);
-						next_node.put(false);
-						transition_to(5);
-					}
-				}
-				else if(md->get_direction() == 1)
-				{
-					if(md->getSteps() <= step_destination)
-					{
-						md->motorOff();
-						*p_serial << task_name << PMS ("S") << endl;
-						*p_serial << task_name << PMS ("loc:") << md->getSteps() << endl;
-						motor_complete->put(true);
-						next_node.put(false);
-						transition_to(5);
-
-					}
-				}
-				
-				if (++delay_counter == 5)
-				{
-					*p_serial << task_name << PMS ("loc:") << md->getSteps() << endl;
-					//*p_serial << task_name << PMS ("freq: ") << freq_hz << endl;
-					
-					delay_counter = 0;
-				}
-				
-				break;	
-				
-			case (8):
-			
-				if(!(pause.get()))
-				{
-					motorOn();
-					transition_to(7);
-				}
-				
-				break;
-
-
-		} // End switch state
 
 		runs++;                             // Increment counter for debugging
 
@@ -414,17 +178,17 @@ void task_md::run (void)
 	}
 }
 
-void task_md::take_step (void)
+void taskMotion::take_step (void)
 {
 	md->take_step();
 }
 
-void task_md::set_signal_low(void)
+void taskMotion::set_signal_low(void)
 {
 	md->set_signal_low();
 }
 
-void task_md::motorOff(void)
+void taskMotion::motorOff(void)
 {
 	md->motorOff();
 	if(coordinate_mode.get() && (LS_min->getStatus() || LS_max->getStatus()))
@@ -433,7 +197,7 @@ void task_md::motorOff(void)
 	}
 }
 
-bool task_md::motorOn(void)
+bool taskMotion::motorOn(void)
 {
 	if (md->get_direction() == 0)
 	{
@@ -479,7 +243,7 @@ bool task_md::motorOn(void)
 	//}
 //}
 
-void task_md::reset_device(void)
+void taskMotion::reset_device(void)
 {
 	*p_serial << PMS ("Resetting device.") << endl;
 	wdt_enable (WDTO_120MS);

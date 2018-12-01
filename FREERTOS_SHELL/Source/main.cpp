@@ -35,7 +35,7 @@
 #include "lib/PeripheralDriver/Timer.h"
 #include "lib/PeripheralDriver/InterruptTimer.h"
 #include "lib/DeviceDriver/DM542T.h"
-#include "lib/DeviceDriver/FakeDM542T.h"
+// #include "lib/DeviceDriver/FakeDM542T.h"
 #include "lib/DeviceDriver/LimitSwitch.h"
 #include "lib/PeripheralDriver/SPI_Master.h"
 #include "lib/DeviceDriver/MAX31855.h"
@@ -44,11 +44,9 @@
 
 #include "lib/Tasks/task_user.h"                      // Header for user interface task
 #include "lib/Tasks/task_LED.h"                      // Header for user interface task
-#include "lib/Tasks/task_md.h"
+#include "lib/Tasks/taskMotion.h"
 #include "lib/Tasks/task_sensor.h"
 #include "lib/Tasks/task_thermocouple.h"
-
-#include "lib/Motion/MotionSegment.h"
 
 volatile int counter;
 
@@ -99,12 +97,12 @@ DeviceDriver::LimitSwitch* lim_y1;
 DeviceDriver::LimitSwitch* lim_y2;
 DeviceDriver::LimitSwitch* lim_z1;
 DeviceDriver::LimitSwitch* lim_z2;
-InterruptTimer* timer_D1_pin4;
-InterruptTimer* timer_D0_pin3;
-InterruptTimer* timer_C0_pin0;
-DM542T* md_x;
-DM542T* md_y;
-DM542T* md_z;
+PeripheralDriver::InterruptTimer* timer_D1_pin4;
+PeripheralDriver::InterruptTimer* timer_D0_pin3;
+PeripheralDriver::InterruptTimer* timer_C0_pin0;
+DeviceDriver::DM542T* md_x;
+DeviceDriver::DM542T* md_y;
+DeviceDriver::DM542T* md_z;
 
 frt_text_queue print_ser_queue (32, NULL, 10);
 
@@ -227,16 +225,16 @@ int main (void)
   // timer_D0_pin3 = new InterruptTimer (&PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc);
   // timer_C0_pin0 = new InterruptTimer (&PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc);
   #ifndef USE_FAKE_DRIVERS
-  md_x = new DM542T ( &PORTA, PIN2_bm, PIN3_bm, 8, &PORTD, &TCD1, PIN4_bm, TC_CCAINTLVL_HI_gc );
-  md_y = new DM542T ( &PORTA, PIN4_bm, PIN5_bm, 8, &PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc );
-  md_z = new DM542T ( &PORTA, PIN6_bm, PIN7_bm, 8, &PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc );
+  md_x = new DeviceDriver::DM542T ( &PORTA, PIN2_bm, PIN3_bm, 8, &PORTD, &TCD1, PIN4_bm, TC_CCAINTLVL_HI_gc );
+  md_y = new DeviceDriver::DM542T ( &PORTA, PIN4_bm, PIN5_bm, 8, &PORTD, &TCD0, PIN3_bm, TC_CCDINTLVL_HI_gc );
+  md_z = new DeviceDriver::DM542T ( &PORTA, PIN6_bm, PIN7_bm, 8, &PORTC, &TCC0, PIN0_bm, TC_CCAINTLVL_HI_gc );
   #endif
 
-  #ifdef USE_FAKE_DRIVERS
-  md_x = new FakeDM542T ( 8 ) ;
-  md_y = new FakeDM542T ( 8 ) ;
-  md_z = new FakeDM542T ( 8 ) ;
-  #endif
+  // #ifdef USE_FAKE_DRIVERS
+  // md_x = new FakeDM542T ( 8 ) ;
+  // md_y = new FakeDM542T ( 8 ) ;
+  // md_z = new FakeDM542T ( 8 ) ;
+  // #endif
 
   #ifndef USE_FAKE_DRIVERS
   lim_x1 = new DeviceDriver::LimitSwitch ( &PORTA, PIN0_bm, 0, 0, EVSYS_CHMUX_PORTA_PIN0_gc);
@@ -261,13 +259,13 @@ int main (void)
   // but it is desired to exercise the RTOS more thoroughly in this test program
   new task_user ( "UserInt", task_priority (0), 128, &ser_dev ) ;
   
-  new task_md ("MDX", task_priority(8), 128, &ser_dev, md_x, lim_x1, lim_x2, &xlocations,
+  new taskMotion("MDX", task_priority(8), 128, &ser_dev, md_x, lim_x1, lim_x2, &xlocations,
   &x_max_velocity, &xmotor_on, &xmotor_complete, 8);
   
-  new task_md ("MDY", task_priority(8), 128, &ser_dev, md_y, lim_y1, lim_y2, &ylocations,
+  new taskMotion("MDY", task_priority(8), 128, &ser_dev, md_y, lim_y1, lim_y2, &ylocations,
   &y_max_velocity, &ymotor_on, &ymotor_complete, 8);
   
-  new task_md ("MDZ", task_priority(8), 128, &ser_dev, md_z, lim_z1, lim_z2, &zlocations,
+  new taskMotion("MDZ", task_priority(8), 128, &ser_dev, md_z, lim_z1, lim_z2, &zlocations,
   &z_max_velocity, &zmotor_on, &zmotor_complete, 8);
 
   // new task_md ( "MDX", task_priority(8), 128, &ser_dev, 

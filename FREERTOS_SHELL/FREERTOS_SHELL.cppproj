@@ -230,24 +230,6 @@
     <Compile Include="Source\lib\freertos\FreeRTOSConfig.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Source\lib\Motion\MotionControl.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Source\lib\Motion\MotionControl.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Source\lib\Motion\MotionSegment.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Source\lib\Motion\MotionSegment.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Source\lib\Motion\VelocityControl.cpp">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Source\lib\Motion\VelocityControl.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Source\lib\PeripheralDriver\ADC.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -284,10 +266,10 @@
     <Compile Include="Source\lib\Tasks\task_LED.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Source\lib\Tasks\task_md.cpp">
+    <Compile Include="Source\lib\Tasks\taskMotion.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Source\lib\Tasks\task_md.h">
+    <Compile Include="Source\lib\Tasks\taskMotion.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Source\lib\Tasks\task_sensor.cpp">
@@ -537,7 +519,6 @@
     <Folder Include="Source\lib\DeviceDriver\" />
     <Folder Include="Source\lib\freertos" />
     <Folder Include="Source\lib\frtcpp" />
-    <Folder Include="Source\lib\Motion\" />
     <Folder Include="Source\lib\PeripheralDriver\" />
     <Folder Include="Source\lib\serial" />
     <Folder Include="Source\lib\misc" />
