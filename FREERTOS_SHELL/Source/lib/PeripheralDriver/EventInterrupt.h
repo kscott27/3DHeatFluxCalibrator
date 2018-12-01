@@ -14,23 +14,24 @@
 namespace PeripheralDriver
 {
   class EventInterrupt
-  {
-
-    protected:
-  
-    PORT_t * port ;
-    uint8_t input_bp ;
-    uint8_t input_bm ;
-    uint8_t EVENTCHnMUX ;
-    uint8_t INTnMASK ;
-    uint8_t EVSYS_CHMUX_PORTx_PINn_gc ;
-    
-    public:
+  { 
+  public:
 
     EventInterrupt ( ) { } ;
     
     EventInterrupt ( PORT_t* port, uint8_t input_bm, uint8_t EVENTCHnMUX, 
       uint8_t PORT_INTnMASK, uint8_t EVSYS_CHMUX_PORTx_PINn_gc );
+
+    bool getInputStatus() { return ( port_->IN & input_bm_ ); }
+
+  protected:
+  
+    PORT_t * port_ ;
+    uint8_t input_bp ;
+    uint8_t input_bm_ ;
+    uint8_t EVENTCHnMUX ;
+    uint8_t INTnMASK ;
+    uint8_t EVSYS_CHMUX_PORTx_PINn_gc ;
 
   };
 

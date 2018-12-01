@@ -427,7 +427,7 @@ void task_md::set_signal_low(void)
 void task_md::motorOff(void)
 {
 	md->motorOff();
-	if(coordinate_mode.get() && (LS_min->get_status() || LS_max->get_status()))
+	if(coordinate_mode.get() && (LS_min->getStatus() || LS_max->getStatus()))
 	{
 		reset_device();
 	}
@@ -437,7 +437,7 @@ bool task_md::motorOn(void)
 {
 	if (md->get_direction() == 0)
 	{
-		if (!(LS_max->get_status()))
+		if (!(LS_max->getStatus()))
 		{
 			md->motorOn();
 			*p_serial << task_name << PMS ("F") << endl;
@@ -450,7 +450,7 @@ bool task_md::motorOn(void)
 	}
 	else
 	{
-		if (!(LS_min->get_status()))
+		if (!(LS_min->getStatus()))
 		{
 			md->motorOn();
 			*p_serial << task_name << PMS ("R") << endl;

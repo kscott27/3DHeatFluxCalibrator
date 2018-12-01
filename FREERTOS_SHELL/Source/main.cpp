@@ -248,12 +248,12 @@ int main (void)
   #endif
 
   #ifdef USE_FAKE_DRIVERS
-  lim_x1 = new DeviceDriver::LimitSwitch ( ) ;
-  lim_x2 = new DeviceDriver::LimitSwitch ( ) ;
-  lim_y1 = new DeviceDriver::LimitSwitch ( ) ;
-  lim_y2 = new DeviceDriver::LimitSwitch ( ) ;
-  lim_z1 = new DeviceDriver::LimitSwitch ( ) ;
-  lim_z2 = new DeviceDriver::LimitSwitch ( ) ;
+  lim_x1 = new DeviceDriver::LimitSwitch ( new PeripheralDriver::EventInterrupt() ) ;
+  lim_x2 = new DeviceDriver::LimitSwitch ( new PeripheralDriver::EventInterrupt() ) ;
+  lim_y1 = new DeviceDriver::LimitSwitch ( new PeripheralDriver::EventInterrupt() ) ;
+  lim_y2 = new DeviceDriver::LimitSwitch ( new PeripheralDriver::EventInterrupt() ) ;
+  lim_z1 = new DeviceDriver::LimitSwitch ( new PeripheralDriver::EventInterrupt() ) ;
+  lim_z2 = new DeviceDriver::LimitSwitch ( new PeripheralDriver::EventInterrupt() ) ;
   #endif
   
   

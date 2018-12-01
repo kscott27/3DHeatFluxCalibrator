@@ -21,26 +21,22 @@
 namespace DeviceDriver
 {
   class LimitSwitch
-    : public PeripheralDriver::EventInterrupt
-  {
-    protected:
-    
-    bool engaged;
-    
-    public:
+  {  
+  public:
+    typedef PeripheralDriver::EventInterrupt EventInterrupt;
 
-    inline LimitSwitch ( )
-      : PeripheralDriver::EventInterrupt( )
+    inline LimitSwitch( EventInterrupt * i )
+      : interrupt_(i)
     { }
     
-    LimitSwitch ( PORT_t* port, uint8_t input_bm, uint8_t EVENTCHnMUX, 
-      uint8_t PORT_INTnMASK, uint8_t EVSYS_CHMUX_PORTx_PINn_gc ) ;
-    
-    bool get_status (void);
-    
-    void clr_status (void);
-    
-    void set_status (void);
+    void setInterrupt( EventInterrupt * i ) { interrupt_ = i; }
+    bool getStatus (void);  
+    void clrStatus (void);
+    void setStatus (void);
+
+  protected:
+    EventInterrupt * interrupt_;
+    bool             engaged_;
     
   };
 

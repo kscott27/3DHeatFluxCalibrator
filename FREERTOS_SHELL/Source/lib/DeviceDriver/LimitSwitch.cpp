@@ -11,34 +11,23 @@
 namespace DeviceDriver
 {
 
-  LimitSwitch::LimitSwitch(PORT_t* port, uint8_t input_bm, uint8_t EVENTCHnMUX, uint8_t PORT_INTnMASK, uint8_t EVSYS_CHMUX_PORTx_PINn_gc)
-    : EventInterrupt ( port, input_bm, EVENTCHnMUX, PORT_INTnMASK, EVSYS_CHMUX_PORTx_PINn_gc )
+  bool LimitSwitch::getStatus(void)
   {
-
+    if ( interrupt_->getInputStatus() ) {
+      setStatus(); }
+    else {
+      clrStatus(); }
+    return engaged_;
   }
 
-  bool LimitSwitch::get_status(void)
+  void LimitSwitch::clrStatus(void)
   {
-    if (port->IN & input_bm)
-    {
-      set_status();
-    }
-    else
-    {
-      clr_status();
-    }
-    return engaged;
-
+    engaged_ = false;
   }
 
-  void LimitSwitch::clr_status(void)
+  void LimitSwitch::setStatus(void)
   {
-    engaged = false;
-  }
-
-  void LimitSwitch::set_status(void)
-  {
-    engaged = true;
+    engaged_ = true;
   }
 
 }

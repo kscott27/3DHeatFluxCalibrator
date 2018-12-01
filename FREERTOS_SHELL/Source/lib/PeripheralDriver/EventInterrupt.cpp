@@ -11,7 +11,7 @@ namespace PeripheralDriver
 {
 
   EventInterrupt::EventInterrupt(PORT_t* port, uint8_t input_bm, uint8_t EVENTCHnMUX, uint8_t INTnMASK, uint8_t EVSYS_CHMUX_PORTx_PINn_gc)
-  :port(port), input_bm(input_bm), EVENTCHnMUX(EVENTCHnMUX), INTnMASK(INTnMASK), EVSYS_CHMUX_PORTx_PINn_gc(EVSYS_CHMUX_PORTx_PINn_gc)
+  :port_(port), input_bm_(input_bm), EVENTCHnMUX(EVENTCHnMUX), INTnMASK(INTnMASK), EVSYS_CHMUX_PORTx_PINn_gc(EVSYS_CHMUX_PORTx_PINn_gc)
   {
 
     port->DIRCLR = input_bm;

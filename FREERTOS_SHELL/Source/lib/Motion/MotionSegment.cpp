@@ -15,8 +15,8 @@ namespace Motion
       motionTaskTimeInterval_(taskTime),
       vMax_(vMax)
   {
-    float maxDistance ;
-    float STD_ACCEL = 1.5 ;
-    float segmentTotalTime = ( vMax_ / STD_ACCEL ) + ( maxDistance - ( vMax_^2 / (2*STD_ACCEL) ) ) / vMax_ ;
+    // float maxDistance ;
+    // float STD_ACCEL = 1.5 ;
+    // float segmentTotalTime = ( vMax_ / STD_ACCEL ) + ( maxDistance - ( vMax_^2 / (2*STD_ACCEL) ) ) / vMax_ ;
   }
 }
