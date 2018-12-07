@@ -1,7 +1,7 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(addsf3.o)
-                              Source/lib/Tasks/task_sensor.o (__subsf3)
+                              Source/lib/Motion/Path.o (__subsf3)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(addsf3x.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(addsf3.o) (__addsf3x)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(divsf3.o)
@@ -33,7 +33,7 @@ c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(mulsf3x.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(mulsf3.o) (__mulsf3x)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(pow.o)
-                              Source/lib/Tasks/task_sensor.o (pow)
+                              Source/lib/Motion/Path.o (pow)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(exp.o)
                               c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(pow.o) (exp)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega6\libm.a(fp_cmp.o)
@@ -252,6 +252,61 @@ Discarded input sections
  .debug_str     0x00000000      0x2c9 Source/lib/Motion/MotionManager.o
  .comment       0x00000000       0x31 Source/lib/Motion/MotionManager.o
  .debug_frame   0x00000000       0x34 Source/lib/Motion/MotionManager.o
+ .group         0x00000000        0x8 Source/lib/Motion/Path.o
+ .text          0x00000000        0x0 Source/lib/Motion/Path.o
+ .data          0x00000000        0x0 Source/lib/Motion/Path.o
+ .bss           0x00000000        0x0 Source/lib/Motion/Path.o
+ .text._ZN6Motion4Path5resetEfffff
+                0x00000000       0x6c Source/lib/Motion/Path.o
+ .text._ZN6Motion4Path8initiateERNS_12MotionStatusES2_
+                0x00000000      0x168 Source/lib/Motion/Path.o
+ .rodata._ZTVN6Motion4PathE
+                0x00000000        0x8 Source/lib/Motion/Path.o
+ .debug_info    0x00000000      0x794 Source/lib/Motion/Path.o
+ .debug_abbrev  0x00000000      0x22d Source/lib/Motion/Path.o
+ .debug_loc     0x00000000      0x353 Source/lib/Motion/Path.o
+ .debug_aranges
+                0x00000000       0x28 Source/lib/Motion/Path.o
+ .debug_ranges  0x00000000       0x18 Source/lib/Motion/Path.o
+ .debug_line    0x00000000      0x142 Source/lib/Motion/Path.o
+ .debug_str     0x00000000      0x6b1 Source/lib/Motion/Path.o
+ .comment       0x00000000       0x31 Source/lib/Motion/Path.o
+ .debug_frame   0x00000000       0xd4 Source/lib/Motion/Path.o
+ .text          0x00000000        0x0 Source/lib/Motion/Profile.o
+ .data          0x00000000        0x0 Source/lib/Motion/Profile.o
+ .bss           0x00000000        0x0 Source/lib/Motion/Profile.o
+ .text._ZN6Motion7Profile5resetEfff
+                0x00000000       0x34 Source/lib/Motion/Profile.o
+ .debug_info    0x00000000      0x4aa Source/lib/Motion/Profile.o
+ .debug_abbrev  0x00000000      0x174 Source/lib/Motion/Profile.o
+ .debug_loc     0x00000000       0xb7 Source/lib/Motion/Profile.o
+ .debug_aranges
+                0x00000000       0x20 Source/lib/Motion/Profile.o
+ .debug_ranges  0x00000000       0x10 Source/lib/Motion/Profile.o
+ .debug_line    0x00000000       0xe5 Source/lib/Motion/Profile.o
+ .debug_str     0x00000000      0x59d Source/lib/Motion/Profile.o
+ .comment       0x00000000       0x31 Source/lib/Motion/Profile.o
+ .debug_frame   0x00000000       0x44 Source/lib/Motion/Profile.o
+ .group         0x00000000        0x8 Source/lib/Motion/TrapezoidalPath.o
+ .text          0x00000000        0x0 Source/lib/Motion/TrapezoidalPath.o
+ .data          0x00000000        0x0 Source/lib/Motion/TrapezoidalPath.o
+ .bss           0x00000000        0x0 Source/lib/Motion/TrapezoidalPath.o
+ .text._ZN6Motion15TrapezoidalPath13computeMotionERNS_12MotionStatusES2_
+                0x00000000       0x7a Source/lib/Motion/TrapezoidalPath.o
+ .text._ZN6Motion15TrapezoidalPathC2Ev
+                0x00000000       0x2a Source/lib/Motion/TrapezoidalPath.o
+ .rodata._ZTVN6Motion15TrapezoidalPathE
+                0x00000000        0x8 Source/lib/Motion/TrapezoidalPath.o
+ .debug_info    0x00000000      0x73f Source/lib/Motion/TrapezoidalPath.o
+ .debug_abbrev  0x00000000      0x25e Source/lib/Motion/TrapezoidalPath.o
+ .debug_loc     0x00000000      0x1c0 Source/lib/Motion/TrapezoidalPath.o
+ .debug_aranges
+                0x00000000       0x28 Source/lib/Motion/TrapezoidalPath.o
+ .debug_ranges  0x00000000       0x18 Source/lib/Motion/TrapezoidalPath.o
+ .debug_line    0x00000000      0x160 Source/lib/Motion/TrapezoidalPath.o
+ .debug_str     0x00000000      0x6e5 Source/lib/Motion/TrapezoidalPath.o
+ .comment       0x00000000       0x31 Source/lib/Motion/TrapezoidalPath.o
+ .debug_frame   0x00000000       0x60 Source/lib/Motion/TrapezoidalPath.o
  .group         0x00000000        0x8 Source/lib/Motion/TrapezoidalProfile.o
  .text          0x00000000        0x0 Source/lib/Motion/TrapezoidalProfile.o
  .data          0x00000000        0x0 Source/lib/Motion/TrapezoidalProfile.o
@@ -262,14 +317,14 @@ Discarded input sections
                 0x00000000       0x34 Source/lib/Motion/TrapezoidalProfile.o
  .rodata._ZTVN6Motion18TrapezoidalProfileE
                 0x00000000        0x8 Source/lib/Motion/TrapezoidalProfile.o
- .debug_info    0x00000000      0x568 Source/lib/Motion/TrapezoidalProfile.o
+ .debug_info    0x00000000      0x599 Source/lib/Motion/TrapezoidalProfile.o
  .debug_abbrev  0x00000000      0x1ed Source/lib/Motion/TrapezoidalProfile.o
  .debug_loc     0x00000000      0x12b Source/lib/Motion/TrapezoidalProfile.o
  .debug_aranges
                 0x00000000       0x28 Source/lib/Motion/TrapezoidalProfile.o
  .debug_ranges  0x00000000       0x18 Source/lib/Motion/TrapezoidalProfile.o
  .debug_line    0x00000000      0x13a Source/lib/Motion/TrapezoidalProfile.o
- .debug_str     0x00000000      0x615 Source/lib/Motion/TrapezoidalProfile.o
+ .debug_str     0x00000000      0x650 Source/lib/Motion/TrapezoidalProfile.o
  .comment       0x00000000       0x31 Source/lib/Motion/TrapezoidalProfile.o
  .debug_frame   0x00000000       0x68 Source/lib/Motion/TrapezoidalProfile.o
  .text          0x00000000        0x0 Source/lib/PeripheralDriver/ADC.o
@@ -1380,6 +1435,9 @@ LOAD Source/lib/DeviceDriver/MAX31855.o
 LOAD Source/lib/DeviceDriver/SBG01.o
 LOAD Source/lib/freertos/croutine.o
 LOAD Source/lib/Motion/MotionManager.o
+LOAD Source/lib/Motion/Path.o
+LOAD Source/lib/Motion/Profile.o
+LOAD Source/lib/Motion/TrapezoidalPath.o
 LOAD Source/lib/Motion/TrapezoidalProfile.o
 LOAD Source/lib/PeripheralDriver/ADC.o
 LOAD Source/lib/PeripheralDriver/EventInterrupt.o

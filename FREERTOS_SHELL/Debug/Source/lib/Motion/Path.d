@@ -1,6 +1,5 @@
-Source/lib/Motion/TrapezoidalPath.d Source/lib/Motion/TrapezoidalPath.o: \
- ../Source/lib/Motion/TrapezoidalPath.cpp \
- ../Source/lib/Motion/TrapezoidalPath.h \
+Source/lib/Motion/Path.d Source/lib/Motion/Path.o: \
+ ../Source/lib/Motion/Path.cpp ../Source/lib/Motion/Path.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -18,12 +17,10 @@ Source/lib/Motion/TrapezoidalPath.d Source/lib/Motion/TrapezoidalPath.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
- ../Source/lib/Motion/Path.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../Source/lib/Motion/Profile.h ../Source/lib/Motion/MotionStatus.h \
- ../Source/lib/Motion/TrapezoidalProfile.h
+ ../Source/lib/Motion/Profile.h ../Source/lib/Motion/MotionStatus.h
 
-../Source/lib/Motion/TrapezoidalPath.h:
+../Source/lib/Motion/Path.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -59,12 +56,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
-../Source/lib/Motion/Path.h:
-
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 ../Source/lib/Motion/Profile.h:
 
 ../Source/lib/Motion/MotionStatus.h:
-
-../Source/lib/Motion/TrapezoidalProfile.h:

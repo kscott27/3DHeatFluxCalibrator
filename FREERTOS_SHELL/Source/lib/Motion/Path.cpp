@@ -22,7 +22,7 @@ namespace Motion
       float x = s.getPosX();
       float y = s.getPosY();
       float z = s.getPosZ();
-      float finalPos = std::pow(( std::pow((xFinal_-x),2) + std::pow((yFinal_-y),2) + std::pow((zFinal_-z),2) ),0.5);
+      float finalPos = pow( ( pow((xFinal_-x),2) + pow((yFinal_-y),2) + pow((zFinal_-z),2) ), 0.5 );
       profile_->reset(finalPos, 1, 1);
       computeMotion(s,cmd);
     }
