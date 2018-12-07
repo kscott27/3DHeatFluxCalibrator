@@ -13,10 +13,10 @@ namespace DeviceDriver
 
   bool LimitSwitch::getStatus(void)
   {
-    if ( interrupt_->getInputStatus() ) {
-      setStatus(); }
-    else {
-      clrStatus(); }
+    if( interrupt_->getInputStatus() )
+      setStatus();
+    else
+      clrStatus();
     return engaged_;
   }
 

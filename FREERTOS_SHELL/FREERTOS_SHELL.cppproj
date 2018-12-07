@@ -230,6 +230,39 @@
     <Compile Include="Source\lib\freertos\FreeRTOSConfig.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Source\lib\Motion\MotionManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\MotionManager.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\MotionStatus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\Path.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\Path.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\Profile.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\Profile.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\TrapezoidalPath.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\TrapezoidalPath.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\TrapezoidalProfile.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\TrapezoidalProfile.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Source\lib\PeripheralDriver\ADC.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -519,6 +552,7 @@
     <Folder Include="Source\lib\DeviceDriver\" />
     <Folder Include="Source\lib\freertos" />
     <Folder Include="Source\lib\frtcpp" />
+    <Folder Include="Source\lib\Motion\" />
     <Folder Include="Source\lib\PeripheralDriver\" />
     <Folder Include="Source\lib\serial" />
     <Folder Include="Source\lib\misc" />

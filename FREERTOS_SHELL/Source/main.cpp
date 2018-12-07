@@ -48,6 +48,8 @@
 #include "lib/Tasks/task_sensor.h"
 #include "lib/Tasks/task_thermocouple.h"
 
+#include "lib/Motion/TrapezoidalPath.h"
+
 volatile int counter;
 
 shared_data<bool> xmotor_complete;

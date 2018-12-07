@@ -12,6 +12,16 @@ Source\lib\DeviceDriver\SBG01.cpp
 
 Source\lib\freertos\croutine.c
 
+Source\lib\Motion\MotionManager.cpp
+
+Source\lib\Motion\Path.cpp
+
+Source\lib\Motion\Profile.cpp
+
+Source\lib\Motion\TrapezoidalPath.cpp
+
+Source\lib\Motion\TrapezoidalProfile.cpp
+
 Source\lib\PeripheralDriver\ADC.cpp
 
 Source\lib\PeripheralDriver\EventInterrupt.cpp

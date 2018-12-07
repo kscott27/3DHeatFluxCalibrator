@@ -169,7 +169,8 @@ void taskMotion::run (void)
 	for (;;)
 	{		
 		
-
+		
+		
 		runs++;                             // Increment counter for debugging
 
 		// No matter the state, wait for approximately a millisecond before we 

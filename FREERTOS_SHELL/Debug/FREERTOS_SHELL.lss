@@ -15,19 +15,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   5 .debug_aranges 00000830  00000000  00000000  0000623c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00019118  00000000  00000000  00006a6c  2**0
+  6 .debug_info   00019120  00000000  00000000  00006a6c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 00006f6d  00000000  00000000  0001fb84  2**0
+  7 .debug_abbrev 00006f78  00000000  00000000  0001fb8c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000643c  00000000  00000000  00026af1  2**0
+  8 .debug_line   00006463  00000000  00000000  00026b04  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00001ba8  00000000  00000000  0002cf30  2**2
+  9 .debug_frame  00001ba8  00000000  00000000  0002cf68  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000734e  00000000  00000000  0002ead8  2**0
+ 10 .debug_str    0000734e  00000000  00000000  0002eb10  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00008884  00000000  00000000  00035e26  2**0
+ 11 .debug_loc    00008884  00000000  00000000  00035e5e  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000728  00000000  00000000  0003e6aa  2**0
+ 12 .debug_ranges 00000728  00000000  00000000  0003e6e2  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -372,108 +372,108 @@ Disassembly of section .text:
      39e:	59 27       	eor	r21, r25
 
 000003a0 <__trampolines_start>:
-     3a0:	0c 94 d1 10 	jmp	0x21a2	; 0x21a2 <_ZN9task_user3runEv+0x8be>
-     3a4:	0c 94 7e 1e 	jmp	0x3cfc	; 0x3cfc <prvIdleTask>
-     3a8:	0c 94 b2 0f 	jmp	0x1f64	; 0x1f64 <_ZN9task_user3runEv+0x680>
-     3ac:	0c 94 17 13 	jmp	0x262e	; 0x262e <_ZN9frt_queueImE3getEv>
-     3b0:	0c 94 7a 13 	jmp	0x26f4	; 0x26f4 <_ZN9frt_queueImE7ISR_putERKm>
-     3b4:	0c 94 49 27 	jmp	0x4e92	; 0x4e92 <_ZN8emstreamlsE15ser_manipulator+0x62>
-     3b8:	0c 94 86 0d 	jmp	0x1b0c	; 0x1b0c <_ZN9task_user3runEv+0x228>
-     3bc:	0c 94 09 12 	jmp	0x2412	; 0x2412 <_ZN9task_user3runEv+0xb2e>
-     3c0:	0c 94 32 08 	jmp	0x1064	; 0x1064 <_ZN10taskMotion3runEv>
-     3c4:	0c 94 97 10 	jmp	0x212e	; 0x212e <_ZN9task_user3runEv+0x84a>
-     3c8:	0c 94 fb 0f 	jmp	0x1ff6	; 0x1ff6 <_ZN9task_user3runEv+0x712>
-     3cc:	0c 94 d6 29 	jmp	0x53ac	; 0x53ac <_ZN5rs23214check_for_charEv>
-     3d0:	0c 94 b3 0e 	jmp	0x1d66	; 0x1d66 <_ZN9task_user3runEv+0x482>
-     3d4:	0c 94 cc 12 	jmp	0x2598	; 0x2598 <_ZN9frt_queueImE9not_emptyEv>
-     3d8:	0c 94 26 26 	jmp	0x4c4c	; 0x4c4c <__cxa_pure_virtual>
-     3dc:	0c 94 19 0d 	jmp	0x1a32	; 0x1a32 <_ZN9task_user3runEv+0x14e>
-     3e0:	0c 94 e1 12 	jmp	0x25c2	; 0x25c2 <_ZN9frt_queueImE10get_a_copyERm>
-     3e4:	0c 94 fd 11 	jmp	0x23fa	; 0x23fa <_ZN9task_user3runEv+0xb16>
-     3e8:	0c 94 01 0f 	jmp	0x1e02	; 0x1e02 <_ZN9task_user3runEv+0x51e>
-     3ec:	0c 94 d1 0f 	jmp	0x1fa2	; 0x1fa2 <_ZN9task_user3runEv+0x6be>
-     3f0:	0c 94 03 0d 	jmp	0x1a06	; 0x1a06 <_ZN9task_user3runEv+0x122>
-     3f4:	0c 94 ee 10 	jmp	0x21dc	; 0x21dc <_ZN9task_user3runEv+0x8f8>
-     3f8:	0c 94 81 0d 	jmp	0x1b02	; 0x1b02 <_ZN9task_user3runEv+0x21e>
-     3fc:	0c 94 a9 12 	jmp	0x2552	; 0x2552 <_ZN9frt_queueImE16ISR_num_items_inEv>
-     400:	0c 94 e9 29 	jmp	0x53d2	; 0x53d2 <_ZN5rs23212clear_screenEv>
-     404:	0c 94 51 27 	jmp	0x4ea2	; 0x4ea2 <_ZN8emstreamlsE15ser_manipulator+0x72>
-     408:	0c 94 69 12 	jmp	0x24d2	; 0x24d2 <_ZN9task_user3runEv+0xbee>
-     40c:	0c 94 35 13 	jmp	0x266a	; 0x266a <_ZN9frt_queueImE7ISR_getEPm>
-     410:	0c 94 5c 0d 	jmp	0x1ab8	; 0x1ab8 <_ZN9task_user3runEv+0x1d4>
-     414:	0c 94 e7 0e 	jmp	0x1dce	; 0x1dce <_ZN9task_user3runEv+0x4ea>
-     418:	0c 94 19 0f 	jmp	0x1e32	; 0x1e32 <_ZN9task_user3runEv+0x54e>
-     41c:	0c 94 7d 0e 	jmp	0x1cfa	; 0x1cfa <_ZN9task_user3runEv+0x416>
-     420:	0c 94 bb 12 	jmp	0x2576	; 0x2576 <_ZN9frt_queueImE12ISR_is_emptyEv>
-     424:	0c 94 57 18 	jmp	0x30ae	; 0x30ae <_GLOBAL__sub_I_counter>
-     428:	0c 94 31 0f 	jmp	0x1e62	; 0x1e62 <_ZN9task_user3runEv+0x57e>
-     42c:	0c 94 73 0d 	jmp	0x1ae6	; 0x1ae6 <_ZN9task_user3runEv+0x202>
-     430:	0c 94 8c 29 	jmp	0x5318	; 0x5318 <_ZN5rs2327putcharEc>
-     434:	0c 94 0b 13 	jmp	0x2616	; 0x2616 <_ZN9frt_queueImE3getEPm>
-     438:	0c 94 0d 0f 	jmp	0x1e1a	; 0x1e1a <_ZN9task_user3runEv+0x536>
-     43c:	0c 94 be 0f 	jmp	0x1f7c	; 0x1f7c <_ZN9task_user3runEv+0x698>
-     440:	0c 94 7f 10 	jmp	0x20fe	; 0x20fe <_ZN9task_user3runEv+0x81a>
-     444:	0c 94 72 0c 	jmp	0x18e4	; 0x18e4 <_ZN9task_user3runEv>
-     448:	0c 94 36 27 	jmp	0x4e6c	; 0x4e6c <_ZN8emstreamlsE15ser_manipulator+0x3c>
-     44c:	0c 94 d1 26 	jmp	0x4da2	; 0x4da2 <_ZN8emstream12transmit_nowEv>
-     450:	0c 94 cf 26 	jmp	0x4d9e	; 0x4d9e <_ZN8emstream14check_for_charEv>
-     454:	0c 94 5d 12 	jmp	0x24ba	; 0x24ba <_ZN9task_user3runEv+0xbd6>
-     458:	0c 94 45 0d 	jmp	0x1a8a	; 0x1a8a <_ZN9task_user3runEv+0x1a6>
-     45c:	0c 94 49 0f 	jmp	0x1e92	; 0x1e92 <_ZN9task_user3runEv+0x5ae>
-     460:	0c 94 1a 25 	jmp	0x4a34	; 0x4a34 <_ZN8frt_task12print_statusER8emstream>
-     464:	0c 94 95 12 	jmp	0x252a	; 0x252a <_ZN9task_user3runEv+0xc46>
-     468:	0c 94 45 12 	jmp	0x248a	; 0x248a <_ZN9task_user3runEv+0xba6>
-     46c:	0c 94 21 12 	jmp	0x2442	; 0x2442 <_ZN9task_user3runEv+0xb5e>
-     470:	0c 94 c5 12 	jmp	0x258a	; 0x258a <_ZN9frt_queueImE12num_items_inEv>
-     474:	0c 94 df 0d 	jmp	0x1bbe	; 0x1bbe <_ZN9task_user3runEv+0x2da>
-     478:	0c 94 0d 11 	jmp	0x221a	; 0x221a <_ZN9task_user3runEv+0x936>
-     47c:	0c 94 62 13 	jmp	0x26c4	; 0x26c4 <_ZN9frt_queueImE11ISR_butt_inERKm>
-     480:	0c 94 aa 25 	jmp	0x4b54	; 0x4b54 <_ZN14frt_text_queue7getcharEv>
-     484:	0c 94 51 12 	jmp	0x24a2	; 0x24a2 <_ZN9task_user3runEv+0xbbe>
-     488:	0c 94 2a 27 	jmp	0x4e54	; 0x4e54 <_ZN8emstreamlsE15ser_manipulator+0x24>
-     48c:	0c 94 2d 12 	jmp	0x245a	; 0x245a <_ZN9task_user3runEv+0xb76>
-     490:	0c 94 98 0e 	jmp	0x1d30	; 0x1d30 <_ZN9task_user3runEv+0x44c>
-     494:	0c 94 25 0f 	jmp	0x1e4a	; 0x1e4a <_ZN9task_user3runEv+0x566>
-     498:	0c 94 30 27 	jmp	0x4e60	; 0x4e60 <_ZN8emstreamlsE15ser_manipulator+0x30>
-     49c:	0c 94 27 27 	jmp	0x4e4e	; 0x4e4e <_ZN8emstreamlsE15ser_manipulator+0x1e>
-     4a0:	0c 94 2d 27 	jmp	0x4e5a	; 0x4e5a <_ZN8emstreamlsE15ser_manipulator+0x2a>
-     4a4:	0c 94 c4 0f 	jmp	0x1f88	; 0x1f88 <_ZN9task_user3runEv+0x6a4>
-     4a8:	0c 94 d2 26 	jmp	0x4da4	; 0x4da4 <_ZN8emstream12clear_screenEv>
-     4ac:	0c 94 ed 12 	jmp	0x25da	; 0x25da <_ZN9frt_queueImE10get_a_copyEv>
-     4b0:	0c 94 e3 11 	jmp	0x23c6	; 0x23c6 <_ZN9task_user3runEv+0xae2>
+     3a0:	0c 94 a4 13 	jmp	0x2748	; 0x2748 <_ZN9frt_queueImE3putERKm>
+     3a4:	0c 94 33 27 	jmp	0x4e66	; 0x4e66 <_ZN8emstreamlsE15ser_manipulator+0x36>
+     3a8:	0c 94 2d 27 	jmp	0x4e5a	; 0x4e5a <_ZN8emstreamlsE15ser_manipulator+0x2a>
+     3ac:	0c 94 95 12 	jmp	0x252a	; 0x252a <_ZN9task_user3runEv+0xc46>
+     3b0:	0c 94 2d 12 	jmp	0x245a	; 0x245a <_ZN9task_user3runEv+0xb76>
+     3b4:	0c 94 e1 12 	jmp	0x25c2	; 0x25c2 <_ZN9frt_queueImE10get_a_copyERm>
+     3b8:	0c 94 aa 25 	jmp	0x4b54	; 0x4b54 <_ZN14frt_text_queue7getcharEv>
+     3bc:	0c 94 cc 12 	jmp	0x2598	; 0x2598 <_ZN9frt_queueImE9not_emptyEv>
+     3c0:	0c 94 b8 0f 	jmp	0x1f70	; 0x1f70 <_ZN9task_user3runEv+0x68c>
+     3c4:	0c 94 35 13 	jmp	0x266a	; 0x266a <_ZN9frt_queueImE7ISR_getEPm>
+     3c8:	0c 94 36 27 	jmp	0x4e6c	; 0x4e6c <_ZN8emstreamlsE15ser_manipulator+0x3c>
+     3cc:	0c 94 b2 0f 	jmp	0x1f64	; 0x1f64 <_ZN9task_user3runEv+0x680>
+     3d0:	0c 94 b4 10 	jmp	0x2168	; 0x2168 <_ZN9task_user3runEv+0x884>
+     3d4:	0c 94 d2 26 	jmp	0x4da4	; 0x4da4 <_ZN8emstream12clear_screenEv>
+     3d8:	0c 94 e3 11 	jmp	0x23c6	; 0x23c6 <_ZN9task_user3runEv+0xae2>
+     3dc:	0c 94 c8 25 	jmp	0x4b90	; 0x4b90 <_ZN14frt_text_queue14check_for_charEv>
+     3e0:	0c 94 7d 0e 	jmp	0x1cfa	; 0x1cfa <_ZN9task_user3runEv+0x416>
+     3e4:	0c 94 73 0d 	jmp	0x1ae6	; 0x1ae6 <_ZN9task_user3runEv+0x202>
+     3e8:	0c 94 5c 0d 	jmp	0x1ab8	; 0x1ab8 <_ZN9task_user3runEv+0x1d4>
+     3ec:	0c 94 e5 0c 	jmp	0x19ca	; 0x19ca <_ZN9task_user3runEv+0xe6>
+     3f0:	0c 94 2a 27 	jmp	0x4e54	; 0x4e54 <_ZN8emstreamlsE15ser_manipulator+0x24>
+     3f4:	0c 94 38 27 	jmp	0x4e70	; 0x4e70 <_ZN8emstreamlsE15ser_manipulator+0x40>
+     3f8:	0c 94 c4 0f 	jmp	0x1f88	; 0x1f88 <_ZN9task_user3runEv+0x6a4>
+     3fc:	0c 94 03 0d 	jmp	0x1a06	; 0x1a06 <_ZN9task_user3runEv+0x122>
+     400:	0c 94 86 0d 	jmp	0x1b0c	; 0x1b0c <_ZN9task_user3runEv+0x228>
+     404:	0c 94 8c 29 	jmp	0x5318	; 0x5318 <_ZN5rs2327putcharEc>
+     408:	0c 94 62 0e 	jmp	0x1cc4	; 0x1cc4 <_ZN9task_user3runEv+0x3e0>
+     40c:	0c 94 d6 29 	jmp	0x53ac	; 0x53ac <_ZN5rs23214check_for_charEv>
+     410:	0c 94 cc 26 	jmp	0x4d98	; 0x4d98 <_ZN8emstream7getcharEv>
+     414:	0c 94 da 0d 	jmp	0x1bb4	; 0x1bb4 <_ZN9task_user3runEv+0x2d0>
+     418:	0c 94 27 27 	jmp	0x4e4e	; 0x4e4e <_ZN8emstreamlsE15ser_manipulator+0x1e>
+     41c:	0c 94 b0 12 	jmp	0x2560	; 0x2560 <_ZN9frt_queueImE13ISR_not_emptyEv>
+     420:	0c 94 f5 0e 	jmp	0x1dea	; 0x1dea <_ZN9task_user3runEv+0x506>
+     424:	0c 94 97 10 	jmp	0x212e	; 0x212e <_ZN9task_user3runEv+0x84a>
+     428:	0c 94 57 18 	jmp	0x30ae	; 0x30ae <_GLOBAL__sub_I_counter>
+     42c:	0c 94 0b 13 	jmp	0x2616	; 0x2616 <_ZN9frt_queueImE3getEPm>
+     430:	0c 94 26 26 	jmp	0x4c4c	; 0x4c4c <__cxa_pure_virtual>
+     434:	0c 94 0d 11 	jmp	0x221a	; 0x221a <_ZN9task_user3runEv+0x936>
+     438:	0c 94 b1 11 	jmp	0x2362	; 0x2362 <_ZN9task_user3runEv+0xa7e>
+     43c:	0c 94 32 08 	jmp	0x1064	; 0x1064 <_ZN10taskMotion3runEv>
+     440:	0c 94 fd 11 	jmp	0x23fa	; 0x23fa <_ZN9task_user3runEv+0xb16>
+     444:	0c 94 5b 27 	jmp	0x4eb6	; 0x4eb6 <_ZN8emstreamlsE15ser_manipulator+0x86>
+     448:	0c 94 c5 0e 	jmp	0x1d8a	; 0x1d8a <_ZN9task_user3runEv+0x4a6>
+     44c:	0c 94 3d 0f 	jmp	0x1e7a	; 0x1e7a <_ZN9task_user3runEv+0x596>
+     450:	0c 94 d7 12 	jmp	0x25ae	; 0x25ae <_ZN9frt_queueImE8is_emptyEv>
+     454:	0c 94 bb 12 	jmp	0x2576	; 0x2576 <_ZN9frt_queueImE12ISR_is_emptyEv>
+     458:	0c 94 d1 0f 	jmp	0x1fa2	; 0x1fa2 <_ZN9task_user3runEv+0x6be>
+     45c:	0c 94 49 27 	jmp	0x4e92	; 0x4e92 <_ZN8emstreamlsE15ser_manipulator+0x62>
+     460:	0c 94 1a 07 	jmp	0xe34	; 0xe34 <_call_static_run_method>
+     464:	0c 94 df 0d 	jmp	0x1bbe	; 0x1bbe <_ZN9task_user3runEv+0x2da>
+     468:	0c 94 1a 25 	jmp	0x4a34	; 0x4a34 <_ZN8frt_task12print_statusER8emstream>
+     46c:	0c 94 e7 0e 	jmp	0x1dce	; 0x1dce <_ZN9task_user3runEv+0x4ea>
+     470:	0c 94 ed 12 	jmp	0x25da	; 0x25da <_ZN9frt_queueImE10get_a_copyEv>
+     474:	0c 94 af 08 	jmp	0x115e	; 0x115e <_ZN11task_sensor3runEv>
+     478:	0c 94 09 12 	jmp	0x2412	; 0x2412 <_ZN9task_user3runEv+0xb2e>
+     47c:	0c 94 7a 13 	jmp	0x26f4	; 0x26f4 <_ZN9frt_queueImE7ISR_putERKm>
+     480:	0c 94 be 0f 	jmp	0x1f7c	; 0x1f7c <_ZN9task_user3runEv+0x698>
+     484:	0c 94 46 13 	jmp	0x268c	; 0x268c <_ZN9frt_queueImE7ISR_getEv>
+     488:	0c 94 c5 12 	jmp	0x258a	; 0x258a <_ZN9frt_queueImE12num_items_inEv>
+     48c:	0c 94 19 0d 	jmp	0x1a32	; 0x1a32 <_ZN9task_user3runEv+0x14e>
+     490:	0c 94 b0 29 	jmp	0x5360	; 0x5360 <_ZN5rs2327getcharEv>
+     494:	0c 94 25 10 	jmp	0x204a	; 0x204a <_ZN9task_user3runEv+0x766>
+     498:	0c 94 31 0f 	jmp	0x1e62	; 0x1e62 <_ZN9task_user3runEv+0x57e>
+     49c:	0c 94 d1 26 	jmp	0x4da2	; 0x4da2 <_ZN8emstream12transmit_nowEv>
+     4a0:	0c 94 45 0d 	jmp	0x1a8a	; 0x1a8a <_ZN9task_user3runEv+0x1a6>
+     4a4:	0c 94 51 12 	jmp	0x24a2	; 0x24a2 <_ZN9task_user3runEv+0xbbe>
+     4a8:	0c 94 21 12 	jmp	0x2442	; 0x2442 <_ZN9task_user3runEv+0xb5e>
+     4ac:	0c 94 45 12 	jmp	0x248a	; 0x248a <_ZN9task_user3runEv+0xba6>
+     4b0:	0c 94 a9 12 	jmp	0x2552	; 0x2552 <_ZN9frt_queueImE16ISR_num_items_inEv>
      4b4:	0c 94 8f 0d 	jmp	0x1b1e	; 0x1b1e <_ZN9task_user3runEv+0x23a>
-     4b8:	0c 94 f5 0e 	jmp	0x1dea	; 0x1dea <_ZN9task_user3runEv+0x506>
-     4bc:	0c 94 a4 13 	jmp	0x2748	; 0x2748 <_ZN9frt_queueImE3putERKm>
-     4c0:	0c 94 b0 29 	jmp	0x5360	; 0x5360 <_ZN5rs2327getcharEv>
-     4c4:	0c 94 25 10 	jmp	0x204a	; 0x204a <_ZN9task_user3runEv+0x766>
-     4c8:	0c 94 92 13 	jmp	0x2724	; 0x2724 <_ZN9frt_queueImE7butt_inERKm>
-     4cc:	0c 94 4b 0e 	jmp	0x1c96	; 0x1c96 <_ZN9task_user3runEv+0x3b2>
-     4d0:	0c 94 da 0d 	jmp	0x1bb4	; 0x1bb4 <_ZN9task_user3runEv+0x2d0>
-     4d4:	0c 94 3d 0f 	jmp	0x1e7a	; 0x1e7a <_ZN9task_user3runEv+0x596>
-     4d8:	0c 94 87 11 	jmp	0x230e	; 0x230e <_ZN9task_user3runEv+0xa2a>
-     4dc:	0c 94 33 27 	jmp	0x4e66	; 0x4e66 <_ZN8emstreamlsE15ser_manipulator+0x36>
-     4e0:	0c 94 b0 12 	jmp	0x2560	; 0x2560 <_ZN9frt_queueImE13ISR_not_emptyEv>
-     4e4:	0c 94 c8 25 	jmp	0x4b90	; 0x4b90 <_ZN14frt_text_queue14check_for_charEv>
-     4e8:	0c 94 cb 11 	jmp	0x2396	; 0x2396 <_ZN9task_user3runEv+0xab2>
-     4ec:	0c 94 38 27 	jmp	0x4e70	; 0x4e70 <_ZN8emstreamlsE15ser_manipulator+0x40>
-     4f0:	0c 94 55 0f 	jmp	0x1eaa	; 0x1eaa <_ZN9task_user3runEv+0x5c6>
-     4f4:	0c 94 59 27 	jmp	0x4eb2	; 0x4eb2 <_ZN8emstreamlsE15ser_manipulator+0x82>
-     4f8:	0c 94 af 08 	jmp	0x115e	; 0x115e <_ZN11task_sensor3runEv>
-     4fc:	0c 94 b1 11 	jmp	0x2362	; 0x2362 <_ZN9task_user3runEv+0xa7e>
-     500:	0c 94 b8 0f 	jmp	0x1f70	; 0x1f70 <_ZN9task_user3runEv+0x68c>
-     504:	0c 94 c5 0e 	jmp	0x1d8a	; 0x1d8a <_ZN9task_user3runEv+0x4a6>
-     508:	0c 94 b4 10 	jmp	0x2168	; 0x2168 <_ZN9task_user3runEv+0x884>
-     50c:	0c 94 39 12 	jmp	0x2472	; 0x2472 <_ZN9task_user3runEv+0xb8e>
-     510:	0c 94 15 12 	jmp	0x242a	; 0x242a <_ZN9task_user3runEv+0xb46>
-     514:	0c 94 46 13 	jmp	0x268c	; 0x268c <_ZN9frt_queueImE7ISR_getEv>
-     518:	0c 94 ca 26 	jmp	0x4d94	; 0x4d94 <_ZN8emstream13ready_to_sendEv>
-     51c:	0c 94 62 0e 	jmp	0x1cc4	; 0x1cc4 <_ZN9task_user3runEv+0x3e0>
-     520:	0c 94 d3 25 	jmp	0x4ba6	; 0x4ba6 <_ZN14frt_text_queue7putcharEc>
-     524:	0c 94 cc 26 	jmp	0x4d98	; 0x4d98 <_ZN8emstream7getcharEv>
-     528:	0c 94 1a 07 	jmp	0xe34	; 0xe34 <_call_static_run_method>
-     52c:	0c 94 5b 27 	jmp	0x4eb6	; 0x4eb6 <_ZN8emstreamlsE15ser_manipulator+0x86>
-     530:	0c 94 d7 12 	jmp	0x25ae	; 0x25ae <_ZN9frt_queueImE8is_emptyEv>
-     534:	0c 94 e5 0c 	jmp	0x19ca	; 0x19ca <_ZN9task_user3runEv+0xe6>
+     4b8:	0c 94 39 12 	jmp	0x2472	; 0x2472 <_ZN9task_user3runEv+0xb8e>
+     4bc:	0c 94 17 13 	jmp	0x262e	; 0x262e <_ZN9frt_queueImE3getEv>
+     4c0:	0c 94 72 0c 	jmp	0x18e4	; 0x18e4 <_ZN9task_user3runEv>
+     4c4:	0c 94 98 0e 	jmp	0x1d30	; 0x1d30 <_ZN9task_user3runEv+0x44c>
+     4c8:	0c 94 15 12 	jmp	0x242a	; 0x242a <_ZN9task_user3runEv+0xb46>
+     4cc:	0c 94 01 0f 	jmp	0x1e02	; 0x1e02 <_ZN9task_user3runEv+0x51e>
+     4d0:	0c 94 e9 29 	jmp	0x53d2	; 0x53d2 <_ZN5rs23212clear_screenEv>
+     4d4:	0c 94 51 27 	jmp	0x4ea2	; 0x4ea2 <_ZN8emstreamlsE15ser_manipulator+0x72>
+     4d8:	0c 94 7f 10 	jmp	0x20fe	; 0x20fe <_ZN9task_user3runEv+0x81a>
+     4dc:	0c 94 7e 1e 	jmp	0x3cfc	; 0x3cfc <prvIdleTask>
+     4e0:	0c 94 b3 0e 	jmp	0x1d66	; 0x1d66 <_ZN9task_user3runEv+0x482>
+     4e4:	0c 94 19 0f 	jmp	0x1e32	; 0x1e32 <_ZN9task_user3runEv+0x54e>
+     4e8:	0c 94 69 12 	jmp	0x24d2	; 0x24d2 <_ZN9task_user3runEv+0xbee>
+     4ec:	0c 94 5d 12 	jmp	0x24ba	; 0x24ba <_ZN9task_user3runEv+0xbd6>
+     4f0:	0c 94 59 27 	jmp	0x4eb2	; 0x4eb2 <_ZN8emstreamlsE15ser_manipulator+0x82>
+     4f4:	0c 94 d3 25 	jmp	0x4ba6	; 0x4ba6 <_ZN14frt_text_queue7putcharEc>
+     4f8:	0c 94 cf 26 	jmp	0x4d9e	; 0x4d9e <_ZN8emstream14check_for_charEv>
+     4fc:	0c 94 cb 11 	jmp	0x2396	; 0x2396 <_ZN9task_user3runEv+0xab2>
+     500:	0c 94 d1 10 	jmp	0x21a2	; 0x21a2 <_ZN9task_user3runEv+0x8be>
+     504:	0c 94 ee 10 	jmp	0x21dc	; 0x21dc <_ZN9task_user3runEv+0x8f8>
+     508:	0c 94 ca 26 	jmp	0x4d94	; 0x4d94 <_ZN8emstream13ready_to_sendEv>
+     50c:	0c 94 87 11 	jmp	0x230e	; 0x230e <_ZN9task_user3runEv+0xa2a>
+     510:	0c 94 30 27 	jmp	0x4e60	; 0x4e60 <_ZN8emstreamlsE15ser_manipulator+0x30>
+     514:	0c 94 62 13 	jmp	0x26c4	; 0x26c4 <_ZN9frt_queueImE11ISR_butt_inERKm>
+     518:	0c 94 55 0f 	jmp	0x1eaa	; 0x1eaa <_ZN9task_user3runEv+0x5c6>
+     51c:	0c 94 81 0d 	jmp	0x1b02	; 0x1b02 <_ZN9task_user3runEv+0x21e>
+     520:	0c 94 0d 0f 	jmp	0x1e1a	; 0x1e1a <_ZN9task_user3runEv+0x536>
+     524:	0c 94 25 0f 	jmp	0x1e4a	; 0x1e4a <_ZN9task_user3runEv+0x566>
+     528:	0c 94 49 0f 	jmp	0x1e92	; 0x1e92 <_ZN9task_user3runEv+0x5ae>
+     52c:	0c 94 fb 0f 	jmp	0x1ff6	; 0x1ff6 <_ZN9task_user3runEv+0x712>
+     530:	0c 94 4b 0e 	jmp	0x1c96	; 0x1c96 <_ZN9task_user3runEv+0x3b2>
+     534:	0c 94 92 13 	jmp	0x2724	; 0x2724 <_ZN9frt_queueImE7butt_inERKm>
 
 00000538 <__trampolines_end>:
      538:	00 40       	sbci	r16, 0x00	; 0
@@ -1311,11 +1311,11 @@ float SBG01::get_voltage_mv (void)
 void taskMotion::run (void)
 {
     1064:	ec 01       	movw	r28, r24
-	// such loop inside the code for each task
 	for (;;)
 	{		
 		
-
+		
+		
 		runs++;                             // Increment counter for debugging
     1066:	8e 85       	ldd	r24, Y+14	; 0x0e
     1068:	9f 85       	ldd	r25, Y+15	; 0x0f
