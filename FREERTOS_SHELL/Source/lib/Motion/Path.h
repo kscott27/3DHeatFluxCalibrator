@@ -19,18 +19,21 @@ namespace Motion
   public:
     inline Path( ) { }
     ~Path() { }
-    virtual void computeMotion( MotionStatus & s, MotionStatus & cmd ) = 0;    
+    virtual void computeMotion( MotionStatus & s, MotionStatus & cmd );    
     virtual void reset( float xFinal, float yFinal, float zFinal, float vMax, float aMax );
-    void initiate( MotionStatus & s, MotionStatus & cmd );
+    inline bool isDone() const { return !inProgress_; }
+    virtual void setProfile() = 0;
 
   protected:
-    float xFinal_;
-    float yFinal_;
-    float zFinal_;
-    float vMax_;
-    float aMax_;
-    bool  inProgress_;
-    bool  ready_;
+    void initiate( MotionStatus & s, MotionStatus & cmd );
+
+    float   xFinal_;
+    float   yFinal_;
+    float   zFinal_;
+    float   vMax_;
+    float   aMax_;
+    bool    inProgress_;
+    bool    ready_;
     Profile * profile_;
 
   };

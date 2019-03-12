@@ -12,7 +12,7 @@ namespace PeripheralDriver
 {
 
 	InterruptTimer::InterruptTimer(PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm)
-	:timer_port(timer_port), timer0(timer0), pin_bm(pin_bm), int_lvl_bm(int_lvl_bm)
+	 : timer_port(timer_port), timer0(timer0), pin_bm(pin_bm), int_lvl_bm(int_lvl_bm)
 	{
 		timer_port->DIRSET |= pin_bm;
 		
@@ -53,7 +53,7 @@ namespace PeripheralDriver
 	}
 	
 	InterruptTimer::InterruptTimer(PORT_t* timer_port, TC1_t* timer1, uint8_t pin_bm, uint8_t int_lvl_bm)
-	:timer_port(timer_port), timer1(timer1), pin_bm(pin_bm), int_lvl_bm(int_lvl_bm)
+	 : timer_port(timer_port), timer1(timer1), pin_bm(pin_bm), int_lvl_bm(int_lvl_bm)
 	{
 		timer_port->DIRSET |= pin_bm;
 		

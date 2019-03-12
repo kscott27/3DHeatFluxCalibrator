@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "PathQueue.h"
+
 
 namespace Motion
 {
@@ -15,11 +17,16 @@ namespace Motion
   {
   public:
   
-    MotionManager();
+    MotionManager( );
     ~MotionManager() { }
     virtual void updateMotion();
+    virtual void communicateMotion();
   
   protected:
+    MotionStatus motionCmd_;
+    MotionStatus motionState_;
+    PathQueue    pathQueue_;
+    Path *       currentPath_;
     
   };
 

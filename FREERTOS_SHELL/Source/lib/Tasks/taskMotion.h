@@ -50,6 +50,7 @@
 #include "../PeripheralDriver/Timer.h"
 #include "../PeripheralDriver/InterruptTimer.h"
 #include "../DeviceDriver/LimitSwitch.h"
+#include "../Motion/MotionManager.h"
 
 /// This macro defines a string that identifies the name and version of this program. 
 #define PROGRAM_VERSION   PMS ("ME405 base radio program V0.4 ")
@@ -105,30 +106,7 @@ public:
 
   const char* task_name;
 
-  taskMotion(const char*, unsigned portBASE_TYPE, size_t, emstream*, DM542T* md, LimitSwitch* LS_min, LimitSwitch* LS_max,
-  frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
-  uint16_t microstep_scaler);
-
-  // task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
-  //   uint16_t microstep_scaler ) ; 
-  
-  // // This constructor creates a motor driver task object
-  // task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
-  //   PORT_t* logic_port, 
-  //   uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
-  //   PORT_t* timer_port, TC0_t* timer0, uint8_t pin_bm, uint8_t int_lvl_bm,
-  //   frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, 
-  //   shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
-  //   DeviceDriver::LimitSwitch * LS_min, DeviceDriver::LimitSwitch * LS_max ) ;
-
-  // // This constructor creates a motor driver task object
-  // task_md ( const char*, unsigned portBASE_TYPE, size_t, emstream*, 
-  //   PORT_t* logic_port, 
-  //   uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
-  //   PORT_t* timer_port, TC1_t* timer1, uint8_t pin_bm, uint8_t int_lvl_bm,
-  //   frt_queue<uint32_t>* locations, frt_queue<uint32_t>* max_velocity, 
-  //   shared_data<uint8_t>* motor_operator, shared_data<bool>* motor_complete,
-  //   DeviceDriver::LimitSwitch * LS_min, DeviceDriver::LimitSwitch * LS_max ) ;
+  taskMotion(const char *, unsigned portBASE_TYPE, size_t, emstream *);
 
   /** This method is called by the RTOS once to run the task loop for ever and ever.
    */

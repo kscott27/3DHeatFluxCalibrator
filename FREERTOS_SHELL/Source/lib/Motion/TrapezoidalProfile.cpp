@@ -6,10 +6,11 @@ namespace Motion
   void TrapezoidalProfile::computeMotion( MotionStatus & m )
   {
     const uint16_t dt = m.getTimeInterval();
-    v_ = vPrev_ + aMax_*dt;
 
     if( v_ > vMax_ )
       v_ = vMax_;
+    else
+      v_ = vPrev_ + aMax_*dt;
 
     pos_ = posPrev_ + v_*dt;
   }

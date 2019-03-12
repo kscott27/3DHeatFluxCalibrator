@@ -5,14 +5,12 @@ namespace Motion
 
   TrapezoidalPath::TrapezoidalPath()
   { 
+    setProfile();
+  }
+
+  void TrapezoidalPath::setProfile()
+  {
     profile_ = new TrapezoidalProfile();
   }
 
-  void TrapezoidalPath::computeMotion( MotionStatus & s, MotionStatus & cmd )
-  {
-    profile_->update();
-    profile_->computeMotion(s);
-    float v = s.getVel() + profile_->velChange();
-    cmd.setVel(v);
-  }
 }

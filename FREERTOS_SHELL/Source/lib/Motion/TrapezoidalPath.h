@@ -18,7 +18,7 @@ namespace Motion
   {
   public:
     TrapezoidalPath( );
-    virtual void computeMotion( MotionStatus & m, MotionStatus & cmd );    
+    void setProfile(); 
 
   protected:
   };
