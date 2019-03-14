@@ -3,10 +3,10 @@
 namespace Motion
 {
 
-  PathQueue::getPath( Path * p )
+  void PathQueue::getPath( Path * p )
   { 
-    if( not_empty() )
-      get(p);
+    // if( not_empty() )
+    //   get(p);
   }
 
 }

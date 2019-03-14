@@ -3,11 +3,6 @@
 namespace Motion
 {
 
-  MotionManager::MotionManager( )
-  {
-    
-  }
-
   void MotionManager::updateMotion()
   {
     if( currentPath_ )

@@ -14,7 +14,7 @@ namespace Motion
   {
   public:
   
-    inline MotionStatus( uint16_t & dt ) 
+    inline MotionStatus( double & dt ) 
       : dt_(dt),
         accel_(0),
         vel_(0),
@@ -35,7 +35,7 @@ namespace Motion
     const uint16_t getTimeInterval() { return dt_; }
 
 protected:
-    uint16_t & dt_;
+    double &   dt_;
     float      accel_;
     float      vel_;
     float      posX_;

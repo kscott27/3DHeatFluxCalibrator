@@ -16,6 +16,8 @@ Source\lib\Motion\MotionManager.cpp
 
 Source\lib\Motion\Path.cpp
 
+Source\lib\Motion\PathQueue.cpp
+
 Source\lib\Motion\Profile.cpp
 
 Source\lib\Motion\TrapezoidalPath.cpp

@@ -72,6 +72,7 @@ protected:
 
   typedef DeviceDriver::LimitSwitch LimitSwitch;
   typedef DeviceDriver::DM542T      DM542T;
+  typedef Motion::MotionManager     MotionManager;
 
   DM542T * md ;
   DeviceDriver::LimitSwitch * LS_min ;
@@ -94,6 +95,8 @@ protected:
   uint16_t freq_hz ;
   uint32_t max_vel ;
   uint16_t microstep_scaler ;
+  double dt_;
+  MotionManager motionManager_;
   
   // This method displays a simple help message telling the user what to do. It's
   // protected so that only methods of this class or possibly descendents can use it

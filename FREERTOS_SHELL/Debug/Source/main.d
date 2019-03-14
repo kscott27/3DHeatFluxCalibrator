@@ -51,14 +51,18 @@ Source/main.d Source/main.o: ../Source/main.cpp \
  ../Source/lib/Tasks/../PeripheralDriver/Timer.h \
  ../Source/lib/Tasks/../PeripheralDriver/InterruptTimer.h \
  ../Source/lib/Tasks/../DeviceDriver/LimitSwitch.h \
- ../Source/lib/Tasks/task_sensor.h \
+ ../Source/lib/Tasks/../Motion/MotionManager.h \
+ ../Source/lib/Tasks/../Motion/PathQueue.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ ../Source/lib/Tasks/../Motion/Path.h \
+ ../Source/lib/Tasks/../Motion/Profile.h \
+ ../Source/lib/Tasks/../Motion/MotionStatus.h \
+ ../Source/lib/Tasks/task_sensor.h \
  ../Source/lib/Tasks/../DeviceDriver/SBG01.h \
  ../Source/lib/Tasks/task_thermocouple.h \
  ../Source/lib/Tasks/../DeviceDriver/MAX31855.h \
  ../Source/lib/Motion/TrapezoidalPath.h ../Source/lib/Motion/Path.h \
- ../Source/lib/Motion/Profile.h ../Source/lib/Motion/MotionStatus.h \
- ../Source/lib/Motion/TrapezoidalProfile.h
+ ../Source/lib/Motion/TrapezoidalProfile.h ../Source/lib/Motion/Profile.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
 
@@ -192,9 +196,19 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 
 ../Source/lib/Tasks/../DeviceDriver/LimitSwitch.h:
 
-../Source/lib/Tasks/task_sensor.h:
+../Source/lib/Tasks/../Motion/MotionManager.h:
+
+../Source/lib/Tasks/../Motion/PathQueue.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../Source/lib/Tasks/../Motion/Path.h:
+
+../Source/lib/Tasks/../Motion/Profile.h:
+
+../Source/lib/Tasks/../Motion/MotionStatus.h:
+
+../Source/lib/Tasks/task_sensor.h:
 
 ../Source/lib/Tasks/../DeviceDriver/SBG01.h:
 
@@ -206,8 +220,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../Source/lib/Motion/Path.h:
 
-../Source/lib/Motion/Profile.h:
-
-../Source/lib/Motion/MotionStatus.h:
-
 ../Source/lib/Motion/TrapezoidalProfile.h:
+
+../Source/lib/Motion/Profile.h:

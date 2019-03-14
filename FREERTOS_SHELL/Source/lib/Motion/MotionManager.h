@@ -17,12 +17,19 @@ namespace Motion
   {
   public:
   
-    MotionManager( );
+    MotionManager( double & dt )
+      : dt_(dt),
+        motionCmd_(dt),
+        motionState_(dt)       
+    { }
     ~MotionManager() { }
     virtual void updateMotion();
     virtual void communicateMotion();
+    inline double & getDt() const { return dt_; }
+    inline void setDt( double & dt ) { dt_ = dt; }
   
   protected:
+    double &     dt_;
     MotionStatus motionCmd_;
     MotionStatus motionState_;
     PathQueue    pathQueue_;

@@ -43,7 +43,9 @@ taskMotion::taskMotion(const char * a_name,
                        size_t a_stack_size,
                        emstream * p_ser_dev
 )
-: frt_task (a_name, a_priority, a_stack_size, p_ser_dev)
+	: frt_task (a_name, a_priority, a_stack_size, p_ser_dev),
+		dt_(2),
+		motionManager_(dt_)
 {
 	float turns_per_inch;
 	turns_per_inch = 3;
@@ -72,7 +74,7 @@ void taskMotion::run (void)
 
 		// No matter the state, wait for approximately a millisecond before we 
 		// run the loop again. This gives lower priority tasks a chance to run
-		vTaskDelay (configMS_TO_TICKS (20));
+		vTaskDelay (configMS_TO_TICKS (dt_));
 	}
 }
 

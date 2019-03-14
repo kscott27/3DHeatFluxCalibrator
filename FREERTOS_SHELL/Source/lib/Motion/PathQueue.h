@@ -16,12 +16,19 @@ namespace Motion
 {
 
   class PathQueue
-    : public frt_queue<Path>
+    : public frt_queue< Path * >
   {
   public:
-    inline PathQueue( ) { }
+    inline PathQueue( uint8_t queue_size = 10, emstream * p_ser_dev = NULL, portTickType wait_time = 10 )
+    : frt_queue(queue_size, p_ser_dev, wait_time),
+      size_(queue_size)
+  { }
     ~PathQueue() { }
     void getPath( Path * );
+    inline uint8_t getSize() const { return size_; }
+
+  protected:
+    uint8_t size_;
 
   };
 

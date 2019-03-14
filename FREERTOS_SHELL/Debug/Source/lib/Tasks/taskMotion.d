@@ -46,7 +46,13 @@ Source/lib/Tasks/taskMotion.d Source/lib/Tasks/taskMotion.o: \
  ../Source/lib/Tasks/../PeripheralDriver/InterruptTimer.h \
  ../Source/lib/Tasks/../DeviceDriver/LimitSwitch.h \
  ../Source/lib/Tasks/../DeviceDriver/DM542T.h \
- ../Source/lib/Tasks/../DeviceDriver/../PeripheralDriver/EventInterrupt.h
+ ../Source/lib/Tasks/../DeviceDriver/../PeripheralDriver/EventInterrupt.h \
+ ../Source/lib/Tasks/../Motion/MotionManager.h \
+ ../Source/lib/Tasks/../Motion/PathQueue.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ ../Source/lib/Tasks/../Motion/Path.h \
+ ../Source/lib/Tasks/../Motion/Profile.h \
+ ../Source/lib/Tasks/../Motion/MotionStatus.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -157,3 +163,15 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 ../Source/lib/Tasks/../DeviceDriver/DM542T.h:
 
 ../Source/lib/Tasks/../DeviceDriver/../PeripheralDriver/EventInterrupt.h:
+
+../Source/lib/Tasks/../Motion/MotionManager.h:
+
+../Source/lib/Tasks/../Motion/PathQueue.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../Source/lib/Tasks/../Motion/Path.h:
+
+../Source/lib/Tasks/../Motion/Profile.h:
+
+../Source/lib/Tasks/../Motion/MotionStatus.h:

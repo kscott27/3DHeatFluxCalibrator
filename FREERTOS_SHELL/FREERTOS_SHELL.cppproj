@@ -245,6 +245,12 @@
     <Compile Include="Source\lib\Motion\Path.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Source\lib\Motion\PathQueue.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\PathQueue.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Source\lib\Motion\Profile.cpp">
       <SubType>compile</SubType>
     </Compile>

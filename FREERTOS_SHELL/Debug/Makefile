@@ -54,6 +54,7 @@ C_SRCS +=  \
 ../Source/lib/freertos/croutine.c \
 ../Source/lib/Motion/MotionManager.cpp \
 ../Source/lib/Motion/Path.cpp \
+../Source/lib/Motion/PathQueue.cpp \
 ../Source/lib/Motion/Profile.cpp \
 ../Source/lib/Motion/TrapezoidalPath.cpp \
 ../Source/lib/Motion/TrapezoidalProfile.cpp \
@@ -128,6 +129,7 @@ Source/lib/DeviceDriver/SBG01.o \
 Source/lib/freertos/croutine.o \
 Source/lib/Motion/MotionManager.o \
 Source/lib/Motion/Path.o \
+Source/lib/Motion/PathQueue.o \
 Source/lib/Motion/Profile.o \
 Source/lib/Motion/TrapezoidalPath.o \
 Source/lib/Motion/TrapezoidalProfile.o \
@@ -195,6 +197,7 @@ Source/lib/DeviceDriver/SBG01.o \
 Source/lib/freertos/croutine.o \
 Source/lib/Motion/MotionManager.o \
 Source/lib/Motion/Path.o \
+Source/lib/Motion/PathQueue.o \
 Source/lib/Motion/Profile.o \
 Source/lib/Motion/TrapezoidalPath.o \
 Source/lib/Motion/TrapezoidalProfile.o \
@@ -262,6 +265,7 @@ Source/lib/DeviceDriver/SBG01.d \
 Source/lib/freertos/croutine.d \
 Source/lib/Motion/MotionManager.d \
 Source/lib/Motion/Path.d \
+Source/lib/Motion/PathQueue.d \
 Source/lib/Motion/Profile.d \
 Source/lib/Motion/TrapezoidalPath.d \
 Source/lib/Motion/TrapezoidalProfile.d \
@@ -329,6 +333,7 @@ Source/lib/DeviceDriver/SBG01.d \
 Source/lib/freertos/croutine.d \
 Source/lib/Motion/MotionManager.d \
 Source/lib/Motion/Path.d \
+Source/lib/Motion/PathQueue.d \
 Source/lib/Motion/Profile.d \
 Source/lib/Motion/TrapezoidalPath.d \
 Source/lib/Motion/TrapezoidalProfile.d \
@@ -402,6 +407,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

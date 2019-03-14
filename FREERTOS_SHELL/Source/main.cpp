@@ -261,14 +261,14 @@ int main (void)
   // but it is desired to exercise the RTOS more thoroughly in this test program
   new task_user ( "UserInt", task_priority (0), 128, &ser_dev ) ;
   
-  new taskMotion("MDX", task_priority(8), 128, &ser_dev, md_x, lim_x1, lim_x2, &xlocations,
-  &x_max_velocity, &xmotor_on, &xmotor_complete, 8);
+  // new taskMotion("MDX", task_priority(8), 128, &ser_dev, md_x, lim_x1, lim_x2, &xlocations,
+  // &x_max_velocity, &xmotor_on, &xmotor_complete, 8);
   
-  new taskMotion("MDY", task_priority(8), 128, &ser_dev, md_y, lim_y1, lim_y2, &ylocations,
-  &y_max_velocity, &ymotor_on, &ymotor_complete, 8);
+  // new taskMotion("MDY", task_priority(8), 128, &ser_dev, md_y, lim_y1, lim_y2, &ylocations,
+  // &y_max_velocity, &ymotor_on, &ymotor_complete, 8);
   
-  new taskMotion("MDZ", task_priority(8), 128, &ser_dev, md_z, lim_z1, lim_z2, &zlocations,
-  &z_max_velocity, &zmotor_on, &zmotor_complete, 8);
+  // new taskMotion("MDZ", task_priority(8), 128, &ser_dev, md_z, lim_z1, lim_z2, &zlocations,
+  // &z_max_velocity, &zmotor_on, &zmotor_complete, 8);
 
   // new task_md ( "MDX", task_priority(8), 128, &ser_dev, 
   //   8 ) ;
@@ -279,7 +279,7 @@ int main (void)
   // new task_md ("MDZ", task_priority(8), 128, &ser_dev, 
   //   8 );
   
-  new task_sensor ("Gardon_Gauge", task_priority(9), 500, &ser_dev, sbg01);
+  // new task_sensor ("Gardon_Gauge", task_priority(9), 500, &ser_dev, sbg01);
 
     //new task_thermocouple ("Therm1", task_priority(6), 128, &ser_dev, therm10);
 //
