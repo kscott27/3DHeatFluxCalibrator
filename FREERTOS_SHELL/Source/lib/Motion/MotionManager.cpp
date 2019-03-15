@@ -12,7 +12,7 @@ namespace Motion
         currentPath_ = 0; // set the current path null so the manager knows to move on to the next path
     }
     else
-      pathQueue_.getPath(currentPath_);
+      currentPath_ = pathQueue_.getPath();
   }
 
   void MotionManager::communicateMotion()

@@ -4,9 +4,6 @@
 #include <avr/io.h>                         // Port I/O for SFR's
 #include <avr/interrupt.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "PathQueue.h"
 
 

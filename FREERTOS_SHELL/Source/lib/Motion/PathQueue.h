@@ -4,10 +4,6 @@
 #include <avr/io.h>                         // Port I/O for SFR's
 #include <avr/interrupt.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
 #include "frt_queue.h"                      // Header of wrapper for FreeRTOS queues
 
 #include "Path.h"
@@ -24,7 +20,7 @@ namespace Motion
       size_(queue_size)
   { }
     ~PathQueue() { }
-    void getPath( Path * );
+    Path * getPath();
     inline uint8_t getSize() const { return size_; }
 
   protected:

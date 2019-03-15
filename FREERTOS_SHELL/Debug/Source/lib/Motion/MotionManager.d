@@ -14,10 +14,22 @@ Source/lib/Motion/MotionManager.d Source/lib/Motion/MotionManager.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
+ ../Source/lib/Motion/PathQueue.h ../Source/lib/frtcpp/frt_queue.h \
+ ../Source/lib/freertos/FreeRTOS.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
+ ../Source/lib/freertos/projdefs.h \
+ ../Source/lib/freertos/FreeRTOSConfig.h \
+ ../Source/lib/freertos/portable.h ../Source/lib/freertos/portmacro.h \
+ ../Source/lib/freertos/mpu_wrappers.h ../Source/lib/freertos/queue.h \
+ ../Source/lib/serial/emstream.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h \
+ ../Source/lib/frtcpp/frt_base_queue.h ../Source/lib/Motion/Path.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
+ ../Source/lib/Motion/Profile.h ../Source/lib/Motion/MotionStatus.h
 
 ../Source/lib/Motion/MotionManager.h:
 
@@ -47,10 +59,44 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
+../Source/lib/Motion/PathQueue.h:
+
+../Source/lib/frtcpp/frt_queue.h:
+
+../Source/lib/freertos/FreeRTOS.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
+
+../Source/lib/freertos/projdefs.h:
+
+../Source/lib/freertos/FreeRTOSConfig.h:
+
+../Source/lib/freertos/portable.h:
+
+../Source/lib/freertos/portmacro.h:
+
+../Source/lib/freertos/mpu_wrappers.h:
+
+../Source/lib/freertos/queue.h:
+
+../Source/lib/serial/emstream.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\string.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\pgmspace.h:
+
+../Source/lib/frtcpp/frt_base_queue.h:
+
+../Source/lib/Motion/Path.h:
+
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h:
 
-c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
-
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
+
+c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../Source/lib/Motion/Profile.h:
+
+../Source/lib/Motion/MotionStatus.h:
