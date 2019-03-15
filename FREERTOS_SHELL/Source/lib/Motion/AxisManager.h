@@ -20,6 +20,8 @@ namespace Motion
         zAxis_( new FakeDM542T() )  
     { }
     ~AxisManager() { }
+
+    void updateAxes( MotionStatus & cmd, MotionStatus & state );
   
   protected:
     Axis xAxis_;

@@ -4,8 +4,8 @@
 #include <avr/io.h>                         // Port I/O for SFR's
 #include <avr/interrupt.h>
 
-#include "Axis.h"
 #include "../DeviceDriver/DM542T.h"
+#include "MotionStatus.h"
 
 namespace Motion
 {
@@ -20,6 +20,8 @@ namespace Motion
      : motorDriver_(d)     
     { }
     ~Axis() { }
+
+    void updateFrame( MotionStatus & cmd, MotionStatus & state ) { }
 
   protected:
     DM542T * motorDriver_;

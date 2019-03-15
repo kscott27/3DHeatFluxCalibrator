@@ -22,9 +22,20 @@ namespace Motion
       float x = s.getPosX();
       float y = s.getPosY();
       float z = s.getPosZ();
-      float finalPos = pow( ( pow((xFinal_-x),2) + pow((yFinal_-y),2) + pow((zFinal_-z),2) ), 0.5 );
+      float dx = xFinal_ - x;
+      float dy = yFinal_ - y;
+      float dz = zFinal_ - z;
+      float finalPos = pow( ( pow((dx),2) + pow((dy),2) + pow((dz),2) ), 0.5 );
+      setTrajectories(finalPos,dx,dy,dz);
       profile_->reset(finalPos, 1, 1);
     }    
+  }
+
+  void Path::setTrajectories( float magnitude, float x, float y, float z )
+  {
+    xTrajectory_ = x / magnitude;
+    yTrajectory_ = y / magnitude;
+    zTrajectory_ = z / magnitude;
   }
 
   void Path::computeMotion( MotionStatus & s, MotionStatus & cmd )

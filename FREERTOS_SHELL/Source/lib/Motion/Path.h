@@ -26,6 +26,7 @@ namespace Motion
 
   protected:
     void initiate( MotionStatus & s, MotionStatus & cmd );
+    void  setTrajectories( float magnitude, float x, float y, float z );
 
     float   xFinal_;
     float   yFinal_;
@@ -35,6 +36,9 @@ namespace Motion
     bool    inProgress_;
     bool    ready_;
     Profile * profile_;
+    float      xTrajectory_;
+    float      yTrajectory_;
+    float      zTrajectory_;
 
   };
 

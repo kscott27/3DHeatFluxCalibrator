@@ -252,9 +252,17 @@ Discarded input sections
  .text          0x00000000        0x0 Source/lib/Motion/AxisManager.o
  .data          0x00000000        0x0 Source/lib/Motion/AxisManager.o
  .bss           0x00000000        0x0 Source/lib/Motion/AxisManager.o
- .debug_line    0x00000000        0x0 Source/lib/Motion/AxisManager.o
- .debug_str     0x00000000      0x152 Source/lib/Motion/AxisManager.o
+ .text._ZN6Motion11AxisManager10updateAxesERNS_12MotionStatusES2_
+                0x00000000        0x2 Source/lib/Motion/AxisManager.o
+ .debug_info    0x00000000      0x48d Source/lib/Motion/AxisManager.o
+ .debug_abbrev  0x00000000      0x18e Source/lib/Motion/AxisManager.o
+ .debug_aranges
+                0x00000000       0x20 Source/lib/Motion/AxisManager.o
+ .debug_ranges  0x00000000       0x10 Source/lib/Motion/AxisManager.o
+ .debug_line    0x00000000      0x15d Source/lib/Motion/AxisManager.o
+ .debug_str     0x00000000      0x58f Source/lib/Motion/AxisManager.o
  .comment       0x00000000       0x31 Source/lib/Motion/AxisManager.o
+ .debug_frame   0x00000000       0x24 Source/lib/Motion/AxisManager.o
  .group         0x00000000        0x8 Source/lib/Motion/MotionManager.o
  .text          0x00000000        0x0 Source/lib/Motion/MotionManager.o
  .data          0x00000000        0x0 Source/lib/Motion/MotionManager.o
@@ -282,21 +290,23 @@ Discarded input sections
  .text._ZN6Motion4Path5resetEfffff
                 0x00000000       0x6c Source/lib/Motion/Path.o
  .text._ZN6Motion4Path8initiateERNS_12MotionStatusES2_
-                0x00000000      0x114 Source/lib/Motion/Path.o
+                0x00000000      0x188 Source/lib/Motion/Path.o
  .text._ZN6Motion4Path13computeMotionERNS_12MotionStatusES2_
                 0x00000000       0x8c Source/lib/Motion/Path.o
+ .text._ZN6Motion4Path15setTrajectoriesEffff
+                0x00000000       0xa0 Source/lib/Motion/Path.o
  .rodata._ZTVN6Motion4PathE
                 0x00000000        0xa Source/lib/Motion/Path.o
- .debug_info    0x00000000      0x8e5 Source/lib/Motion/Path.o
- .debug_abbrev  0x00000000      0x261 Source/lib/Motion/Path.o
- .debug_loc     0x00000000      0x439 Source/lib/Motion/Path.o
+ .debug_info    0x00000000      0xa4b Source/lib/Motion/Path.o
+ .debug_abbrev  0x00000000      0x29d Source/lib/Motion/Path.o
+ .debug_loc     0x00000000      0x72f Source/lib/Motion/Path.o
  .debug_aranges
-                0x00000000       0x30 Source/lib/Motion/Path.o
- .debug_ranges  0x00000000       0x20 Source/lib/Motion/Path.o
- .debug_line    0x00000000      0x17a Source/lib/Motion/Path.o
- .debug_str     0x00000000      0x702 Source/lib/Motion/Path.o
+                0x00000000       0x38 Source/lib/Motion/Path.o
+ .debug_ranges  0x00000000       0x28 Source/lib/Motion/Path.o
+ .debug_line    0x00000000      0x1c6 Source/lib/Motion/Path.o
+ .debug_str     0x00000000      0x769 Source/lib/Motion/Path.o
  .comment       0x00000000       0x31 Source/lib/Motion/Path.o
- .debug_frame   0x00000000       0xf4 Source/lib/Motion/Path.o
+ .debug_frame   0x00000000      0x158 Source/lib/Motion/Path.o
  .text          0x00000000        0x0 Source/lib/Motion/PathQueue.o
  .data          0x00000000        0x0 Source/lib/Motion/PathQueue.o
  .bss           0x00000000        0x0 Source/lib/Motion/PathQueue.o
