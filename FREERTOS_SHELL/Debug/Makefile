@@ -52,6 +52,7 @@ C_SRCS +=  \
 ../Source/lib/DeviceDriver/MAX31855.cpp \
 ../Source/lib/DeviceDriver/SBG01.cpp \
 ../Source/lib/freertos/croutine.c \
+../Source/lib/Motion/AxisManager.cpp \
 ../Source/lib/Motion/MotionManager.cpp \
 ../Source/lib/Motion/Path.cpp \
 ../Source/lib/Motion/PathQueue.cpp \
@@ -127,6 +128,7 @@ Source/lib/DeviceDriver/LimitSwitch.o \
 Source/lib/DeviceDriver/MAX31855.o \
 Source/lib/DeviceDriver/SBG01.o \
 Source/lib/freertos/croutine.o \
+Source/lib/Motion/AxisManager.o \
 Source/lib/Motion/MotionManager.o \
 Source/lib/Motion/Path.o \
 Source/lib/Motion/PathQueue.o \
@@ -195,6 +197,7 @@ Source/lib/DeviceDriver/LimitSwitch.o \
 Source/lib/DeviceDriver/MAX31855.o \
 Source/lib/DeviceDriver/SBG01.o \
 Source/lib/freertos/croutine.o \
+Source/lib/Motion/AxisManager.o \
 Source/lib/Motion/MotionManager.o \
 Source/lib/Motion/Path.o \
 Source/lib/Motion/PathQueue.o \
@@ -263,6 +266,7 @@ Source/lib/DeviceDriver/LimitSwitch.d \
 Source/lib/DeviceDriver/MAX31855.d \
 Source/lib/DeviceDriver/SBG01.d \
 Source/lib/freertos/croutine.d \
+Source/lib/Motion/AxisManager.d \
 Source/lib/Motion/MotionManager.d \
 Source/lib/Motion/Path.d \
 Source/lib/Motion/PathQueue.d \
@@ -331,6 +335,7 @@ Source/lib/DeviceDriver/LimitSwitch.d \
 Source/lib/DeviceDriver/MAX31855.d \
 Source/lib/DeviceDriver/SBG01.d \
 Source/lib/freertos/croutine.d \
+Source/lib/Motion/AxisManager.d \
 Source/lib/Motion/MotionManager.d \
 Source/lib/Motion/Path.d \
 Source/lib/Motion/PathQueue.d \
@@ -407,6 +412,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

@@ -29,7 +29,13 @@ Source/lib/Motion/MotionManager.d Source/lib/Motion/MotionManager.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../Source/lib/Motion/Profile.h ../Source/lib/Motion/MotionStatus.h
+ ../Source/lib/Motion/Profile.h ../Source/lib/Motion/MotionStatus.h \
+ ../Source/lib/Motion/AxisManager.h ../Source/lib/Motion/Axis.h \
+ ../Source/lib/Motion/../DeviceDriver/DM542T.h \
+ ../Source/lib/Motion/../DeviceDriver/../PeripheralDriver/Timer.h \
+ ../Source/lib/Motion/../DeviceDriver/../PeripheralDriver/InterruptTimer.h \
+ ../Source/lib/Motion/../DeviceDriver/FakeDM542T.h \
+ ../Source/lib/Motion/../DeviceDriver/DM542T.h
 
 ../Source/lib/Motion/MotionManager.h:
 
@@ -100,3 +106,17 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Source/lib/Motion/Profile.h:
 
 ../Source/lib/Motion/MotionStatus.h:
+
+../Source/lib/Motion/AxisManager.h:
+
+../Source/lib/Motion/Axis.h:
+
+../Source/lib/Motion/../DeviceDriver/DM542T.h:
+
+../Source/lib/Motion/../DeviceDriver/../PeripheralDriver/Timer.h:
+
+../Source/lib/Motion/../DeviceDriver/../PeripheralDriver/InterruptTimer.h:
+
+../Source/lib/Motion/../DeviceDriver/FakeDM542T.h:
+
+../Source/lib/Motion/../DeviceDriver/DM542T.h:

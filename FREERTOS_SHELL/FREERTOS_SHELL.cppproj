@@ -230,6 +230,15 @@
     <Compile Include="Source\lib\freertos\FreeRTOSConfig.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Source\lib\Motion\Axis.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\AxisManager.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Source\lib\Motion\AxisManager.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Source\lib\Motion\MotionManager.cpp">
       <SubType>compile</SubType>
     </Compile>

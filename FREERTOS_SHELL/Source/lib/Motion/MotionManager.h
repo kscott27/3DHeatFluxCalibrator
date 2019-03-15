@@ -5,6 +5,7 @@
 #include <avr/interrupt.h>
 
 #include "PathQueue.h"
+#include "AxisManager.h"
 
 
 namespace Motion

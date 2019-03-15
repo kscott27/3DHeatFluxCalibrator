@@ -249,6 +249,12 @@ Discarded input sections
  .debug_str     0x00000000      0x55c Source/lib/freertos/croutine.o
  .comment       0x00000000       0x31 Source/lib/freertos/croutine.o
  .debug_frame   0x00000000       0xd0 Source/lib/freertos/croutine.o
+ .text          0x00000000        0x0 Source/lib/Motion/AxisManager.o
+ .data          0x00000000        0x0 Source/lib/Motion/AxisManager.o
+ .bss           0x00000000        0x0 Source/lib/Motion/AxisManager.o
+ .debug_line    0x00000000        0x0 Source/lib/Motion/AxisManager.o
+ .debug_str     0x00000000      0x152 Source/lib/Motion/AxisManager.o
+ .comment       0x00000000       0x31 Source/lib/Motion/AxisManager.o
  .group         0x00000000        0x8 Source/lib/Motion/MotionManager.o
  .text          0x00000000        0x0 Source/lib/Motion/MotionManager.o
  .data          0x00000000        0x0 Source/lib/Motion/MotionManager.o
@@ -259,14 +265,14 @@ Discarded input sections
                 0x00000000       0x4a Source/lib/Motion/MotionManager.o
  .rodata._ZTVN6Motion13MotionManagerE
                 0x00000000        0x8 Source/lib/Motion/MotionManager.o
- .debug_info    0x00000000      0xd1f Source/lib/Motion/MotionManager.o
- .debug_abbrev  0x00000000      0x334 Source/lib/Motion/MotionManager.o
+ .debug_info    0x00000000      0xd2d Source/lib/Motion/MotionManager.o
+ .debug_abbrev  0x00000000      0x33f Source/lib/Motion/MotionManager.o
  .debug_loc     0x00000000       0x65 Source/lib/Motion/MotionManager.o
  .debug_aranges
                 0x00000000       0x28 Source/lib/Motion/MotionManager.o
  .debug_ranges  0x00000000       0x18 Source/lib/Motion/MotionManager.o
- .debug_line    0x00000000      0x20f Source/lib/Motion/MotionManager.o
- .debug_str     0x00000000      0xf3d Source/lib/Motion/MotionManager.o
+ .debug_line    0x00000000      0x28d Source/lib/Motion/MotionManager.o
+ .debug_str     0x00000000      0xf5b Source/lib/Motion/MotionManager.o
  .comment       0x00000000       0x31 Source/lib/Motion/MotionManager.o
  .debug_frame   0x00000000       0x40 Source/lib/Motion/MotionManager.o
  .group         0x00000000        0x8 Source/lib/Motion/Path.o
@@ -1657,6 +1663,7 @@ LOAD Source/lib/DeviceDriver/LimitSwitch.o
 LOAD Source/lib/DeviceDriver/MAX31855.o
 LOAD Source/lib/DeviceDriver/SBG01.o
 LOAD Source/lib/freertos/croutine.o
+LOAD Source/lib/Motion/AxisManager.o
 LOAD Source/lib/Motion/MotionManager.o
 LOAD Source/lib/Motion/Path.o
 LOAD Source/lib/Motion/PathQueue.o
@@ -2793,27 +2800,27 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x137cd
+.debug_info     0x00000000    0x137e9
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x3379 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega256a3bu/avrxmega6/crtatxmega256a3bu.o
- .debug_info    0x00003379     0x1a06 Source/lib/DeviceDriver/DM542T.o
- .debug_info    0x00004d7f     0x4096 Source/lib/Tasks/task_user.o
- .debug_info    0x00008e15     0x3f01 Source/main.o
- .debug_info    0x0000cd16      0x30f Source/lib/freertos/heap_2.o
- .debug_info    0x0000d025      0x2c5 Source/lib/freertos/list.o
- .debug_info    0x0000d2ea      0x275 Source/lib/freertos/port.o
- .debug_info    0x0000d55f      0xdde Source/lib/freertos/queue.o
- .debug_info    0x0000e33d     0x1301 Source/lib/freertos/tasks.o
- .debug_info    0x0000f63e      0x9eb Source/lib/frtcpp/frt_task.o
- .debug_info    0x00010029     0x10e6 Source/lib/frtcpp/frt_task_status.o
- .debug_info    0x0001110f      0x410 Source/lib/frtcpp/frt_text_queue.o
- .debug_info    0x0001151f      0x29c Source/lib/misc/mechutil.o
- .debug_info    0x000117bb      0x482 Source/lib/serial/base232.o
- .debug_info    0x00011c3d      0xa2f Source/lib/serial/emstream.o
- .debug_info    0x0001266c      0x2b8 Source/lib/serial/emstream_uint16_t.o
- .debug_info    0x00012924      0x2e0 Source/lib/serial/emstream_uint32_t.o
- .debug_info    0x00012c04      0x2d8 Source/lib/serial/emstream_uint8_t.o
- .debug_info    0x00012edc      0x8f1 Source/lib/serial/rs232int.o
+ .debug_info    0x00003379     0x1a22 Source/lib/DeviceDriver/DM542T.o
+ .debug_info    0x00004d9b     0x4096 Source/lib/Tasks/task_user.o
+ .debug_info    0x00008e31     0x3f01 Source/main.o
+ .debug_info    0x0000cd32      0x30f Source/lib/freertos/heap_2.o
+ .debug_info    0x0000d041      0x2c5 Source/lib/freertos/list.o
+ .debug_info    0x0000d306      0x275 Source/lib/freertos/port.o
+ .debug_info    0x0000d57b      0xdde Source/lib/freertos/queue.o
+ .debug_info    0x0000e359     0x1301 Source/lib/freertos/tasks.o
+ .debug_info    0x0000f65a      0x9eb Source/lib/frtcpp/frt_task.o
+ .debug_info    0x00010045     0x10e6 Source/lib/frtcpp/frt_task_status.o
+ .debug_info    0x0001112b      0x410 Source/lib/frtcpp/frt_text_queue.o
+ .debug_info    0x0001153b      0x29c Source/lib/misc/mechutil.o
+ .debug_info    0x000117d7      0x482 Source/lib/serial/base232.o
+ .debug_info    0x00011c59      0xa2f Source/lib/serial/emstream.o
+ .debug_info    0x00012688      0x2b8 Source/lib/serial/emstream_uint16_t.o
+ .debug_info    0x00012940      0x2e0 Source/lib/serial/emstream_uint32_t.o
+ .debug_info    0x00012c20      0x2d8 Source/lib/serial/emstream_uint8_t.o
+ .debug_info    0x00012ef8      0x8f1 Source/lib/serial/rs232int.o
 
 .debug_abbrev   0x00000000     0x5de6
  *(.debug_abbrev)
@@ -2880,44 +2887,44 @@ END GROUP
  .debug_frame   0x0000153c       0x54 Source/lib/serial/emstream_uint8_t.o
  .debug_frame   0x00001590      0x1ec Source/lib/serial/rs232int.o
 
-.debug_str      0x00000000     0x6d90
+.debug_str      0x00000000     0x6dad
  *(.debug_str)
  .debug_str     0x00000000     0x21e4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/XMEGAA_DFP/1.1.68/gcc/dev/atxmega256a3bu/avrxmega6/crtatxmega256a3bu.o
- .debug_str     0x000021e4      0xe53 Source/lib/DeviceDriver/DM542T.o
-                                0xf00 (size before relaxing)
- .debug_str     0x00003037      0xdd5 Source/lib/Tasks/task_user.o
+ .debug_str     0x000021e4      0xe70 Source/lib/DeviceDriver/DM542T.o
+                                0xf1d (size before relaxing)
+ .debug_str     0x00003054      0xdd5 Source/lib/Tasks/task_user.o
                                0x130a (size before relaxing)
- .debug_str     0x00003e0c     0x11ee Source/main.o
+ .debug_str     0x00003e29     0x11ee Source/main.o
                                0x230c (size before relaxing)
- .debug_str     0x00004ffa      0x270 Source/lib/freertos/heap_2.o
+ .debug_str     0x00005017      0x270 Source/lib/freertos/heap_2.o
                                 0x31d (size before relaxing)
- .debug_str     0x0000526a      0x131 Source/lib/freertos/list.o
+ .debug_str     0x00005287      0x131 Source/lib/freertos/list.o
                                 0x2ce (size before relaxing)
- .debug_str     0x0000539b      0x11f Source/lib/freertos/port.o
+ .debug_str     0x000053b8      0x11f Source/lib/freertos/port.o
                                 0x2db (size before relaxing)
- .debug_str     0x000054ba      0x372 Source/lib/freertos/queue.o
+ .debug_str     0x000054d7      0x372 Source/lib/freertos/queue.o
                                 0x6cd (size before relaxing)
- .debug_str     0x0000582c      0x50f Source/lib/freertos/tasks.o
+ .debug_str     0x00005849      0x50f Source/lib/freertos/tasks.o
                                 0x9a4 (size before relaxing)
- .debug_str     0x00005d3b      0x130 Source/lib/frtcpp/frt_task.o
+ .debug_str     0x00005d58      0x130 Source/lib/frtcpp/frt_task.o
                                 0x511 (size before relaxing)
- .debug_str     0x00005e6b      0x488 Source/lib/frtcpp/frt_task_status.o
+ .debug_str     0x00005e88      0x488 Source/lib/frtcpp/frt_task_status.o
                                 0x9b1 (size before relaxing)
- .debug_str     0x000062f3      0x12f Source/lib/frtcpp/frt_text_queue.o
+ .debug_str     0x00006310      0x12f Source/lib/frtcpp/frt_text_queue.o
                                 0x423 (size before relaxing)
- .debug_str     0x00006422       0xcf Source/lib/misc/mechutil.o
+ .debug_str     0x0000643f       0xcf Source/lib/misc/mechutil.o
                                 0x2ba (size before relaxing)
- .debug_str     0x000064f1      0x10e Source/lib/serial/base232.o
+ .debug_str     0x0000650e      0x10e Source/lib/serial/base232.o
                                 0x3f6 (size before relaxing)
- .debug_str     0x000065ff      0x419 Source/lib/serial/emstream.o
+ .debug_str     0x0000661c      0x419 Source/lib/serial/emstream.o
                                 0x7aa (size before relaxing)
- .debug_str     0x00006a18       0x62 Source/lib/serial/emstream_uint16_t.o
+ .debug_str     0x00006a35       0x62 Source/lib/serial/emstream_uint16_t.o
                                 0x288 (size before relaxing)
- .debug_str     0x00006a7a       0x42 Source/lib/serial/emstream_uint32_t.o
+ .debug_str     0x00006a97       0x42 Source/lib/serial/emstream_uint32_t.o
                                 0x28b (size before relaxing)
- .debug_str     0x00006abc       0x3a Source/lib/serial/emstream_uint8_t.o
+ .debug_str     0x00006ad9       0x3a Source/lib/serial/emstream_uint8_t.o
                                 0x275 (size before relaxing)
- .debug_str     0x00006af6      0x29a Source/lib/serial/rs232int.o
+ .debug_str     0x00006b13      0x29a Source/lib/serial/rs232int.o
                                 0x6c7 (size before relaxing)
 
 .debug_loc      0x00000000     0x7094

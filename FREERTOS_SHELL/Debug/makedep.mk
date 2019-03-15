@@ -12,6 +12,8 @@ Source\lib\DeviceDriver\SBG01.cpp
 
 Source\lib\freertos\croutine.c
 
+Source\lib\Motion\AxisManager.cpp
+
 Source\lib\Motion\MotionManager.cpp
 
 Source\lib\Motion\Path.cpp

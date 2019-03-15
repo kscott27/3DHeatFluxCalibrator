@@ -50,9 +50,9 @@ class FakeDM542T
   public:
   
   // (Timer* timer, PORT_t* logic_port, uint8_t ena_bm, uint8_t dir_bm, uint8_t microstep_scaler);
-  
-  FakeDM542T ( uint16_t microstep_scaler )
-    : DM542T( microstep_scaler ) 
+
+  FakeDM542T ( )
+    : DM542T( ) 
     { }
   
   virtual bool motorOn(void) { enabled = true ; }

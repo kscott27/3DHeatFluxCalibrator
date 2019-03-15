@@ -52,7 +52,12 @@ Source/lib/Tasks/taskMotion.d Source/lib/Tasks/taskMotion.o: \
  ../Source/lib/Tasks/../Motion/Path.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../Source/lib/Tasks/../Motion/Profile.h \
- ../Source/lib/Tasks/../Motion/MotionStatus.h
+ ../Source/lib/Tasks/../Motion/MotionStatus.h \
+ ../Source/lib/Tasks/../Motion/AxisManager.h \
+ ../Source/lib/Tasks/../Motion/Axis.h \
+ ../Source/lib/Tasks/../Motion/../DeviceDriver/DM542T.h \
+ ../Source/lib/Tasks/../Motion/../DeviceDriver/FakeDM542T.h \
+ ../Source/lib/Tasks/../Motion/../DeviceDriver/DM542T.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -175,3 +180,13 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../Source/lib/Tasks/../Motion/Profile.h:
 
 ../Source/lib/Tasks/../Motion/MotionStatus.h:
+
+../Source/lib/Tasks/../Motion/AxisManager.h:
+
+../Source/lib/Tasks/../Motion/Axis.h:
+
+../Source/lib/Tasks/../Motion/../DeviceDriver/DM542T.h:
+
+../Source/lib/Tasks/../Motion/../DeviceDriver/FakeDM542T.h:
+
+../Source/lib/Tasks/../Motion/../DeviceDriver/DM542T.h:

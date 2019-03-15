@@ -29,6 +29,9 @@ namespace DeviceDriver
     inline DM542T( InterruptTimer * t )
       : timer_(t)
     { }
+
+    inline DM542T()
+    { }
   
     DM542T(PORT_t* logic_port, 
       uint8_t ena_bm, uint8_t dir_bm, uint16_t microstep_scaler,
